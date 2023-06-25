@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NP's Website</title>
+  
+  <script>
+// Add a click event listener to each navigation link
+var navLinks = document.querySelectorAll('nav a');
+for (var i = 0; i < navLinks.length; i++) {
+  navLinks[i].addEventListener('click', function(event) {
+    // Prevent the default link behavior
+    event.preventDefault();
+
+    // Get the href attribute of the clicked link
+    var href = this.getAttribute('href');
+
+    // Scroll to the corresponding section on the page
+    var section = document.querySelector(href);
+    section.scrollIntoView({ behavior: 'smooth' });
+  });
+}
+
+</script>
+<style>
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;background-color:#333;
+  
+}
+.img1{
+  margin-left: 30%;
+}
+.img2{
+  margin-left: 30%;
+}
+.abc{color:darkgreen;
+font-size: 25px;
+}
+/* Header styles */
+header {
+  background-color:#333;
+  color:white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Navigation styles */
+nav {
+
+  color: red;
+  padding: 10px;
+  font-size: larger;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+h1,h2 {
+display: inline;font-size: 35px;
+}
+img{
+  display: inline;
+height: 50px;
+}
+
+nav li {
+  display: inline-block;font-size: 20px;
+  font: bold;
+}
+
+nav a {
+  color: red;
+  text-decoration: none;
+  
+}
+.und{
+  font: underline;
+}
+/* Section styles */
+section {
+  display: inline;
+  padding: 20px;
+
+}
+section h2{
+display: inline;background-color: #555;
+color:  red;
+margin-bottom: 200px;
+}
+p{
+  display: inline-block;
+  color: white;
+  background-color: #333;font-size: 20px;
+}
+.hei{
+  height: 50px;
+}
+.col{
+  color: azure;
+}
+img{
+  height: 100px;
+  border-radius: 50%;
+}
+a{
+  font-size: 20px;
+  color: yellowgreen;
+  
+}
+.ul:hover{
+color: red;
+background-color: blue;
+font-size: 100%;
+}
+a:hover{
+  background-color:blue;
+}
+</style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to the NP's Website</h1>
+  </header>
+
+  <nav>
+    <ul class="ul">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+<br>
+  <section>
+    <h1 class="col">About Website</h1><br><br>
+    <p class="abc">Webiste Providing information and best youtube channels for each programming languages.</p><br><br>
+  </section>
+<ol type="1">
+  <section>
+
+    <h1 class="col">Programming laguages</h1><br><br>
+
+    <li><h2>Python </h2></li><br>
+<br>
+<p>Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation via the off-side rule.
+
+  Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured (particularly procedural), object-oriented and functional programming. It is often described as a "batteries included" language due to its comprehensive standard library.
+  
+  Guido van Rossum began working on Python in the late 1980s as a successor to the ABC programming language and first released it in 1991 as Python 0.9.0.[37] Python 2.0 was released in 2000.er versions.Python 3.0, released in 2008, was a major revision not completely backward-compatible with earlier versions. Python 2.7.18, released in 2020, was the last release of Python 2.</p>
+    <br><br>
+    <p class="und">Youtube Channels for Python:</p><ul><br>
+<li> <a href="https://www.youtube.com/watch?v=_uQrJ0TkZlc">Programming with Mosh</a></li><br>
+<li> <a href="https://www.youtube.com/watch?v=gfDE2a7MKjA">CodeWithHarry</a></li><br>
+<li><a href="https://www.youtube.com/playlist?list=PLsyeobzWxl7poL9JTVyndKe62ieoN-MZ3"> Telusko</a></li><br>
+</ul>
+<li><h2 class="hei">Java </h2></li><br><br>
+<p>
+  Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let programmers write once, run anywhere (WORA), meaning that compiled Java code can run on all platforms that support Java without the need to recompile.Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of the underlying computer architecture. The syntax of Java is similar to C and C++, but has fewer low-level facilities than either of them. The Java runtime provides dynamic capabilities (such as reflection and runtime code modification) that are typically not available in traditional compiled languages.
+</p><br><br>
+<p class="und">
+  Youtube Channels for Java:
+</p><br><br><ul>
+<li> <a href="https://www.youtube.com/watch?v=xk4_1vDrzzo">Bro Code</a></li><br>
+<li> <a href="https://www.youtube.com/watch?v=eIrMbAQSU34">Programming with Mosh</a></li><br>
+
+<li><a href="https://www.youtube.com/watch?v=ntLJmHOJ0ME&list=PLu0W_9lII9agS67Uits0UnJyrYiXhDS6q">CodeWithHarry</a></li><br>
+</ul>
+<li><h2>JavaScript</h2></li><br><br>
+<p>
+  JavaScript , often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine to execute the code on users' devices.
+
+JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript standard. It has dynamic typing, prototype-based object-orientation, and first-class functions. It is multi-paradigm, supporting event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures, and the Document Object Model (DOM).
+</p><br><br>
+<p class="und">
+  Youtube Channels for JavaScript:
+</p><br><br>
+
+<ul>
+<li> <a href="https://www.youtube.com/playlist?list=PL4cUxeGkcC9i9Ae2D9Ee1RvylH38dKuET">The Net Ninja</a></li>
+
+<br><li> <a href="https://www.youtube.com/@programmingwithmosh">Programming with Mosh</a></li><br>
+
+<li><a href="https://www.youtube.com/watch?v=qpU3WIqRz9I&list=PLu0W_9lII9ahR1blWXxgSlL4y9iQBnLpR&index=4">CodeWithHarry</a></li>
+<br></ul>
+<li><h2>PHP</h2></li><br><br>
+<p>
+  PHP is a general-purpose scripting language geared towards web development.It was originally created by Danish-Canadian programmer Rasmus Lerdorf in 1993 and released in 1995.The PHP reference implementation is now produced by the PHP Group. PHP was originally an abbreviation of Personal Home Page, but it now stands for the recursive initialism PHP: Hypertext Preprocessor.
+
+PHP code is usually processed on a web server by a PHP interpreter implemented as a module, a daemon or a Common Gateway Interface (CGI) executable. On a web server, the result of the interpreted and executed PHP code—which may be any type of data, such as generated HTML or binary image data—would form the whole or part of an HTTP response.
+</p><br><br>
+    <p class="und">
+      Youtube Channels for PHP:
+    </p><br><br><ul>
+<li> <a href="https://www.youtube.com/watch?v=6EukZDFE_Zg">SimplLearn</a></li><br>
+<li> <a href="https://www.youtube.com/watch?v=KgUp3FomMoc&list=PLr3d3QYzkw2xabQRUpcZ_IBk9W50M9pe-">Program with Gio</a></li>
+
+<br><li><a href="https://www.youtube.com/watch?v=at19OmH2Bg4&list=PLu0W_9lII9aikXkRE0WxDt1vozo3hnmtR">CodeWithHarry</a></li>
+<br></ul></section></ol>
+  </section>
+<footer>
+  <img src="https://yt3.ggpht.com/a-/AN66SAxU1IfFeOipaweQLYi8n-59qGHbVGEUBneG3Q=s900-mo-c-c0xffffffff-rj-k-no">
+
+  <img class="img1"src="https://yt3.ggpht.com/a-/AAuE7mBCrbz-IwFv2CcXV5A4182dhvlR8_WZ2qBMNQ=s900-mo-c-c0xffffffff-rj-k-no">
+  <img class="img2" src="https://asset-cdn.learnyst.com/assets/schools/11771/schoolLogo/telusko_logo_256_ikc2sm.png">
+</footer>
+  
+</body>
+</html>
