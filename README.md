@@ -68,9 +68,6 @@ Currently ranked **#47 globally (S-Tier)** in GSSoC 2026 with **60+ PRs merged**
 
 ### 🎯 [ProfiLens](https://github.com/Namraa310806/ProfiLens) — Full-Stack Career Development Platform
 
-> **Replace the line below with a screenshot: drag your `home_page_light.png` into this repo and update the path.**
-> `<img src="assets/profilens-preview.png" width="100%" alt="ProfiLens Preview" />`
-
 | | |
 |:---|:---|
 | **Problem** | Students lack a single platform to track skills, earn verifiable certifications, and generate job-ready resumes |
@@ -84,8 +81,6 @@ Currently ranked **#47 globally (S-Tier)** in GSSoC 2026 with **60+ PRs merged**
 
 ### ☁️ [Personal Cloud Assistant](https://github.com/Namraa310806/AWSPeronsalCloudAssistant) — Serverless AWS Application
 
-> **Replace the line below with a screenshot: drag your `UserDashBoard.png` into this repo and update the path.**
-> `<img src="assets/cloud-assistant-preview.png" width="100%" alt="Cloud Assistant Preview" />`
 
 | | |
 |:---|:---|
@@ -100,8 +95,6 @@ Currently ranked **#47 globally (S-Tier)** in GSSoC 2026 with **60+ PRs merged**
 
 ### 🧠 [TeamSense](https://github.com/Namraa310806/TeamSense) — AI-Powered HR Intelligence Platform *(Hackathon)*
 
-> **Replace the line below with a screenshot: add a dashboard screenshot to this repo and update the path.**
-> `<img src="assets/teamsense-preview.png" width="100%" alt="TeamSense Preview" />`
 
 | | |
 |:---|:---|
