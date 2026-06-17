@@ -116,7 +116,7 @@ Currently ranked **#47 globally (S-Tier)** in GSSoC 2026 with **60+ PRs merged**
 | **Architecture** | Image patching + color histogram feature extraction via OpenCV · Random Forest (scikit-learn) · End-to-end inference pipeline · Streamlit UI with distribution charts |
 | **Impact** | Publicly live ML app — full pipeline from raw image input to classified, visualized output |
 | **Stack** | `Python` `scikit-learn` `OpenCV` `NumPy` `Streamlit` |
-| **Links** | [GitHub ↗](https://github.com/Namraa310806/ColorClassifier) &nbsp;·&nbsp; [Live Demo ↗](https://namraapatel-colorclassifier.streamlit.app/) |
+| **Links** | [GitHub ↗](https://github.com/Namraa310806/ColorClassifierML) &nbsp;·&nbsp; [Live Demo ↗](https://namraapatel-colorclassifier.streamlit.app/) |
 
 ---
 
