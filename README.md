@@ -22,7 +22,7 @@
 ```yaml
 Name      : Namraa Patel
 Degree    : B.Tech CSBS — PDEU, Ahmedabad  |  CGPA: 9.84 / 10  |  Graduating: 2028
-Stack     : Django · DRF · React · PostgreSQL · AWS · Docker · Redis · Celery
+Stack     : Django · DRF · React · PostgreSQL · AWS · Docker · Redis · Celery · DeepLearning · Transformers
 Currently : GSSoC 2026 Contributor (S-Tier · Rank #47) · Open Food Facts · Open to Work
 ```
 
