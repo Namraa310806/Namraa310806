@@ -48,7 +48,7 @@ Currently : GSSoC 2026 Contributor (S-Tier · Rank #47) · Open Food Facts · Op
 | 🎓 | **Oracle Certified** | OCI Generative AI Professional + Data Science Professional |
 | 🥇 | **Open Source Hackathon** | **Winner** — production features delivered under time pressure |
 | 🏁 | **Hackout 2025** | **Finalist** — GreenMint, a blockchain sustainability system |
-| 📚 | **PDEU CGPA** | **9.84 / 10** |
+| 📚 | **PDEU CGPA** | **9.46 / 10** |
 
 </div>
 
