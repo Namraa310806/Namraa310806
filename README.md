@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=180&section=header&text=Namraa%20Patel&fontSize=46&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Full-Stack%20Engineer%20%7C%20Open%20Source%20%7C%20Cloud%20%7C%20ML&descSize=17&descAlignY=56&descAlign=50" />
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=18&pause=1200&color=A78BFA&center=true&vCenter=true&width=680&lines=B.Tech+CSBS+%40+PDEU+%7C+CGPA+9.46%2F10;Django+%C2%B7+React+%C2%B7+AWS+%C2%B7+PostgreSQL+%C2%B7+Docker;GSSoC+2026+%E2%80%94+S+Tier+%7C+Global+Rank+%2347+%7C+60%2B+PRs;Open+to+SDE+%2F+Backend+%2F+ML+Internships+2027" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=18&pause=1200&color=A78BFA&center=true&vCenter=true&width=680&lines=B.Tech+CSBS+%40+PDEU+%7C+CGPA+9.46%2F10;Django+%C2%B7+React+%C2%B7+AWS+%C2%B7+PostgreSQL+%C2%B7+Docker;GSSoC+2026+%E2%80%94+S+Tier+%7C+Global+Rank+%2338+%7C+114%2B+PRs;Open+to+SDE+%2F+Backend+%2F+ML+Internships+2027" alt="Typing SVG" /></a>
 
 <br/>
 
