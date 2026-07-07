@@ -41,7 +41,7 @@ Currently : GSSoC 2026 Contributor (S-Tier · Rank #40) · Open Food Facts · Op
 
 | 🏅 | Achievement | Detail |
 |:---:|:---|:---|
-| 🌍 | **GSSoC 2026** | S-Tier · Global Rank **#40** · 90+ PRs Merged |
+| 🌍 | **GSSoC 2026** | S-Tier · Global Rank **#38** · 90+ PRs Merged |
 | 🤖 | **Amazon ML Challenge 2025** | Top **2,500** of 30,000+ participants |
 | 🔥 | **LeetCode** | Rating **2013** · 365-Day Streak · 500+ Problems |
 | ⭐ | **CodeChef** | **4★** Rated |
