@@ -126,8 +126,8 @@ Currently ranked **#47 globally (S-Tier)** in GSSoC 2026 with **60+ PRs merged**
 
 | Metric | Detail |
 |:---|:---|
-| **60+ PRs Merged** | GSSoC 2026 repositories + Open Food Facts Explorer |
-| **GSSoC 2026 — Rank #47** | S-Tier · Top contributor nationally in a competitive open-source program |
+| **114+ PRs Merged** | GSSoC 2026 repositories + Open Food Facts Explorer |
+| **GSSoC 2026 — Rank #53** | S-Tier · Top contributor nationally in a competitive open-source program |
 | **Production Codebase** | Open Food Facts — global food database, used by millions, real maintainer reviews |
 | **Notable PR** | [Accessibility fix ↗](https://github.com/openfoodfacts/openfoodfacts-explorer/pull/1225) — keyboard-navigable crop handles for assistive tech users · 9 commits · merged after full review |
 
@@ -166,8 +166,8 @@ Currently ranked **#47 globally (S-Tier)** in GSSoC 2026 with **60+ PRs merged**
 ## 🎯 Currently
 
 ```
-▸  GSSoC 2026 — S-Tier · Rank #47 · Contributing to Open Food Facts
-▸  Targeting Codeforces Specialist (1400+)
+▸  GSSoC 2026 — S-Tier · Rank #53 · Contributing to Open Food Facts
+▸  Targeting Codeforces Specialist (1600+)
 ▸  Building production-grade ML projects with real-world datasets
 ▸  Open to SDE / Backend / ML internships — Summer 2027
 ```
