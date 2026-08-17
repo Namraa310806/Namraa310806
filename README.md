@@ -21,9 +21,9 @@
 
 ```yaml
 Name      : Namraa Patel
-Degree    : B.Tech CSBS — PDEU, Ahmedabad  |  CGPA: 9.46 / 10  |  Graduating: 2028
+Degree    : B.Tech CSBS — PDEU, Ahmedabad  |  CGPA: 9.61 / 10  |  Graduating: 2028
 Stack     : Django · DRF · React · PostgreSQL · AWS · Docker · Redis · Celery · DeepLearning · Transformers
-Currently : GSSoC 2026 Contributor (A-Tier · Rank #51) · Open Food Facts · Open to Work
+Currently : GSSoC 2026 Contributor (A-Tier · Rank #54) · Open Food Facts · Celery
 ```
 
 <div align="center">
@@ -41,14 +41,14 @@ Currently : GSSoC 2026 Contributor (A-Tier · Rank #51) · Open Food Facts · Op
 
 | 🏅 | Achievement | Detail |
 |:---:|:---|:---|
-| 🌍 | **GSSoC 2026** | S-Tier · Global Rank **#53** · 114+ PRs Merged |
+| 🌍 | **GSSoC 2026** | S-Tier · Global Rank **#54** · 114+ PRs Merged |
 | 🤖 | **Amazon ML Challenge 2025** | Top **2,500** of 30,000+ participants |
-| 🔥 | **LeetCode** | Rating **2013** · 365-Day Streak · 500+ Problems |
+| 🔥 | **LeetCode** | Rating **2156** · 365-Day Streak · 500+ Problems |
 | ⭐ | **CodeChef** | **4★** Rated |
 | 🎓 | **Oracle Certified** | OCI Generative AI Professional + Data Science Professional |
 | 🥇 | **Open Source Hackathon** | **Winner** — production features delivered under time pressure |
 | 🏁 | **Hackout 2025** | **Finalist** — GreenMint, a blockchain sustainability system |
-| 📚 | **PDEU CGPA** | **9.46 / 10** |
+| 📚 | **PDEU CGPA** | **9.61 / 10** |
 
 </div>
 
