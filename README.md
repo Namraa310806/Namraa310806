@@ -41,7 +41,7 @@ Currently : GSSoC 2026 Contributor (A-Tier · Rank #57) · Open Food Facts · Ce
 
 | 🏅 | Achievement | Detail |
 |:---:|:---|:---|
-| 🌍 | **GSSoC 2026** | S-Tier · Global Rank **#54** · 114+ PRs Merged |
+| 🌍 | **GSSoC 2026** | A-Tier · Global Rank **#57** · 114+ PRs Merged |
 | 🤖 | **Amazon ML Challenge 2025** | Top **2,500** of 30,000+ participants |
 | 🔥 | **LeetCode** | Rating **2156** · 365-Day Streak · 500+ Problems |
 | ⭐ | **CodeChef** | **4★** Rated |
@@ -127,7 +127,7 @@ Currently ranked **#47 globally (S-Tier)** in GSSoC 2026 with **60+ PRs merged**
 | Metric | Detail |
 |:---|:---|
 | **114+ PRs Merged** | GSSoC 2026 repositories + Open Food Facts Explorer |
-| **GSSoC 2026 — Rank #53** | S-Tier · Top contributor nationally in a competitive open-source program |
+| **GSSoC 2026 — Rank #57** | S-Tier · Top contributor nationally in a competitive open-source program |
 | **Production Codebase** | Open Food Facts — global food database, used by millions, real maintainer reviews |
 | **Notable PR** | [Accessibility fix ↗](https://github.com/openfoodfacts/openfoodfacts-explorer/pull/1225) — keyboard-navigable crop handles for assistive tech users · 9 commits · merged after full review |
 
