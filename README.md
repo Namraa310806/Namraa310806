@@ -43,7 +43,7 @@ Currently : GSSoC 2026 Contributor (A-Tier · Rank #57) · Open Food Facts · Ce
 |:---:|:---|:---|
 | 🌍 | **GSSoC 2026** | A-Tier · Global Rank **#57** · 114+ PRs Merged |
 | 🤖 | **Amazon ML Challenge 2025** | Top **2,500** of 30,000+ participants |
-| 🔥 | **LeetCode** | Rating **2156** · 365-Day Streak · 500+ Problems |
+| 🔥 | **LeetCode** | Rating **2207** · 365-Day Streak · 500+ Problems |
 | ⭐ | **CodeChef** | **4★** Rated |
 | 🎓 | **Oracle Certified** | OCI Generative AI Professional + Data Science Professional |
 | 🥇 | **Open Source Hackathon** | **Winner** — production features delivered under time pressure |
