@@ -182,48 +182,59 @@ Also merged: a keyboard-navigable crop handles accessibility fix in [Open Food F
 
 ## `> things I've built`
 
+Four projects. Two of them have live architecture diagrams, so you can watch the data move.
+
+<div align="center">
+
+| ⚡ **−60%** synchronous processing load (TeamSense) | 🚀 **−25%** average API response time (Django internship) | ☁️ **0** EC2 instances (Personal Cloud Assistant) |
+|:---:|:---:|:---:|
+
+</div>
+
+### 🧠 [TeamSense](https://github.com/Namraa310806/TeamSense) · async HR analytics pipeline
+
+<div align="center">
+<img src="./arch-teamsense.svg" alt="Animated TeamSense architecture: React dashboard, DRF API, Redis queue, Celery workers, PostgreSQL, all in Docker" width="100%" />
+</div>
+
+HR teams work across fragmented tools. TeamSense ingests employee data and surfaces it on one dashboard. Compute-heavy feedback processing runs in a **Celery + Redis** pipeline instead of the request cycle, which cut synchronous processing load by **60%**. Multi-entity **PostgreSQL** schema for employees, meetings and feedback, containerized with **Docker**.
+
+`Django` `DRF` `Celery` `Redis` `PostgreSQL` `Docker` `React`
+
+---
+
+### ☁️ [Personal Cloud Assistant](https://github.com/Namraa310806/AWSPeronsalCloudAssistant) · serverless on AWS · [live demo](https://main.d1xrjjt0e3swym.amplifyapp.com)
+
+<div align="center">
+<img src="./arch-cloud.svg" alt="Animated Personal Cloud Assistant architecture: React, Cognito, API Gateway, Lambda, DynamoDB, S3, CloudWatch" width="100%" />
+</div>
+
+Notes and file management with no servers to maintain. Stateless **Lambda + API Gateway** backend, **DynamoDB** for notes, **S3** with presigned URLs for files, **Cognito** JWT auth with **least-privilege IAM**, custom **CloudWatch** metrics (operation counts, request duration, errors) behind an admin-only dashboard, and a **React 19** frontend deployed through Amplify CI/CD.
+
+`Lambda` `API Gateway` `DynamoDB` `S3` `Cognito` `CloudWatch` `React`
+
+---
+
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### [TeamSense](https://github.com/Namraa310806/TeamSense)
-**Async HR analytics pipeline**
-
-Moved compute-heavy feedback processing off the request cycle with Celery + Redis, cutting synchronous processing load by **60%**. Multi-entity PostgreSQL schema, Dockerized for reproducible dev and prod, React dashboard.
-
-`Django` `DRF` `Celery` `Redis` `PostgreSQL` `Docker` `React`
-
-</td>
-<td width="50%" valign="top">
-
-### [Personal Cloud Assistant](https://github.com/Namraa310806/AWSPeronsalCloudAssistant)
-**Fully serverless on AWS, zero EC2** · [live demo](https://main.d1xrjjt0e3swym.amplifyapp.com)
-
-Lambda + API Gateway backend, DynamoDB and S3 with presigned URLs, Cognito JWT auth with least-privilege IAM, CloudWatch custom metrics behind an admin dashboard, React 19 on Amplify CI/CD.
-
-`Lambda` `API Gateway` `DynamoDB` `S3` `Cognito` `React`
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### [ProfiLens](https://github.com/Namraa310806/ProfiLens)
+### 🎓 [ProfiLens](https://github.com/Namraa310806/ProfiLens)
 **Career-prep platform**
 
-Roadmap, exam, certificate, resume in one flow. Normalized and indexed PostgreSQL schema for gamification data, RBAC with session-scoped permissions, background PDF generation for certificates and resumes.
+Roadmap, exam, certificate, resume, in one flow. Normalized, indexed **PostgreSQL** schema for user progress and gamification data, which reduced read latency on high-frequency endpoints. **RBAC** with session-scoped permissions, plus a background ReportLab pipeline for certificate and resume generation.
 
 `Django` `DRF` `PostgreSQL` `ReportLab`
 
 </td>
 <td width="50%" valign="top">
 
-### [Color Classifier](https://github.com/Namraa310806/ColorClassifierML)
+### 🎨 [Color Classifier](https://github.com/Namraa310806/ColorClassifierML)
 **ML web app** · [live demo](https://namraapatel-colorclassifier.streamlit.app/)
 
-Random Forest on a custom-labeled dataset with OpenCV histogram features, deployed as a live Streamlit app with distribution charts.
+Random Forest on a custom-labeled color dataset, with image patching and OpenCV histogram features, served as a live Streamlit app with distribution charts. Full pipeline from raw image to classified, visualized output.
 
-`Python` `scikit-learn` `OpenCV` `Streamlit`
+`Python` `scikit-learn` `OpenCV` `NumPy` `Streamlit`
 
 </td>
 </tr>
@@ -233,58 +244,10 @@ Random Forest on a custom-labeled dataset with OpenCV histogram features, deploy
 
 ## `> arsenal`
 
+Every logo below is a real logo with its name written under it, and all of them live inside one file in this repo.
+
 <div align="center">
-
-**Languages**
-
-<img src="https://skillicons.dev/icons?i=python,java,cpp,js,ts,php&perline=6" alt="Languages" />
-
-**Backend and databases**
-
-<img src="https://skillicons.dev/icons?i=django,flask,fastapi,postgres,mysql,mongodb,redis&perline=7" alt="Backend and databases" />
-
-![Celery](https://img.shields.io/badge/Celery-37814A?style=flat-square&logo=celery&logoColor=white)
-![DRF](https://img.shields.io/badge/Django_REST_Framework-A30000?style=flat-square&logo=django&logoColor=white)
-![REST APIs](https://img.shields.io/badge/REST_APIs-0f0c29?style=flat-square)
-
-**Cloud, systems and DevOps**
-
-<img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,linux,git,github&perline=6" alt="Cloud and DevOps" />
-
-![EC2](https://img.shields.io/badge/EC2-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
-![Lambda](https://img.shields.io/badge/Lambda-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
-![S3](https://img.shields.io/badge/S3-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
-![DynamoDB](https://img.shields.io/badge/DynamoDB-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
-![IAM](https://img.shields.io/badge/IAM-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
-![Cognito](https://img.shields.io/badge/Cognito-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
-![API Gateway](https://img.shields.io/badge/API_Gateway-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
-![CloudWatch](https://img.shields.io/badge/CloudWatch-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
-
-**Frontend**
-
-<img src="https://skillicons.dev/icons?i=react,html,css,bootstrap&perline=4" alt="Frontend" />
-
-**AI and ML**
-
-<img src="https://skillicons.dev/icons?i=tensorflow,sklearn,opencv,numpy,pandas&perline=5" alt="ML libraries" />
-
-![Hugging Face](https://img.shields.io/badge/Hugging_Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
-![RAG](https://img.shields.io/badge/RAG-302b63?style=flat-square)
-![Transformers](https://img.shields.io/badge/Transformer_Models-302b63?style=flat-square)
-![Model Evaluation](https://img.shields.io/badge/Model_Evaluation-302b63?style=flat-square)
-![OCI GenAI](https://img.shields.io/badge/OCI_Generative_AI_Professional-F80000?style=flat-square&logo=oracle&logoColor=white)
-
-**Core CS**
-
-![DSA](https://img.shields.io/badge/Data_Structures_%26_Algorithms-24243e?style=flat-square)
-![Concurrency](https://img.shields.io/badge/Concurrency_%26_Correctness-24243e?style=flat-square)
-![OOP](https://img.shields.io/badge/OOP-24243e?style=flat-square)
-![DBMS](https://img.shields.io/badge/DBMS-24243e?style=flat-square)
-![OS](https://img.shields.io/badge/Operating_Systems-24243e?style=flat-square)
-![CN](https://img.shields.io/badge/Computer_Networks-24243e?style=flat-square)
-![System Design](https://img.shields.io/badge/System_Design-24243e?style=flat-square)
-
+<img src="./stack.svg" alt="Tech stack: Python, Java, C++, JavaScript, TypeScript, PHP, Django, Flask, FastAPI, Celery, PostgreSQL, MySQL, MongoDB, Redis, AWS, Docker, Kubernetes, Linux, Git, GitHub, React, HTML5, CSS3, Bootstrap, TensorFlow, scikit-learn, OpenCV, NumPy, pandas, Hugging Face, Streamlit, Oracle OCI" width="100%" />
 </div>
 
 ---
@@ -292,18 +255,37 @@ Random Forest on a custom-labeled dataset with OpenCV histogram features, deploy
 ## `> scoreboard`
 
 <div align="center">
+<img src="./achievements.svg" alt="Animated achievement cards: JPMorgan Chase Code for Good winner, Open Source Hackathon winner, Amazon ML Challenge top 2,500, Google The Big Code round 2, Hackout finalist, Oracle certifications, GSSoC 2026, Celery 5.7.0" width="100%" />
+</div>
+
+<details>
+<summary><b>📋 Prefer it as a table?</b></summary>
+
+<br/>
 
 | | Achievement |
 |:---:|:---|
 | 🥇 | **JPMorgan Chase Code for Good 2026**, winner, production-ready solution for a nonprofit partner |
-| 🌍 | **GSSoC 2026**, nationally ranked open source contributor |
 | 🏆 | **Open Source Hackathon**, winner, production-ready features under time pressure |
 | 🤖 | **Amazon ML Challenge 2025**, top 2,500 of 30,000+ |
 | 🔎 | **Google The Big Code 2026**, qualified for Round 2 |
 | 🏁 | **Hackout 2025**, finalist |
-| 🔥 | **Codeforces Expert (1731)** · **LeetCode 2207** |
 | 🎓 | **Oracle Certified**, OCI Generative AI Professional + Data Science Professional |
+| 🌍 | **GSSoC 2026**, nationally ranked open source contributor |
+| 🔥 | **Codeforces Expert (1731)** · **LeetCode 2207** |
 | 📚 | **PDEU B.Tech CSBS**, CGPA 9.46 / 10, graduating 2028 |
+
+</details>
+
+---
+
+## `> status`
+
+<div align="center">
+
+| 🟢 **Contributing to** | 🎯 **Looking for** | 🎓 **Studying** |
+|:---:|:---:|:---:|
+| Celery · Microsoft Agent Framework · Open Food Facts | Summer 2027 SDE / Backend / ML internships | B.Tech CSBS at PDEU, graduating 2028 |
 
 </div>
 
@@ -327,6 +309,16 @@ Random Forest on a custom-labeled dataset with OpenCV histogram features, deploy
 </div>
 
 ---
+
+<div align="center">
+
+<a href="mailto:patelnamraa88@gmail.com">
+  <img src="./cta.svg" alt="Got a bug that only shows up in production? Let's talk. patelnamraa88@gmail.com" width="100%" />
+</a>
+
+</div>
+
+<br/>
 
 <details>
 <summary><b>🧨 please don't open this</b></summary>
