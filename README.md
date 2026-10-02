@@ -16,6 +16,10 @@
 
 <!-- UPDATE: replace https://codeforces.com/ above with https://codeforces.com/profile/<your-handle> -->
 
+<div align="center">
+<img src="./winner.svg" alt="Winner of JPMorgan Chase Code for Good 2026" width="100%" />
+</div>
+
 ---
 
 ## `> choose your path`
@@ -67,6 +71,16 @@ I don't just add features to open source. I go looking for the bugs that hide in
 |:---:|:---:|:---:|:---:|
 
 </div>
+
+---
+
+## `> the long game`
+
+<div align="center">
+<img src="./resilience.svg" alt="9 commits to merge my first PR, then five upstream fixes" width="100%" />
+</div>
+
+My first open-source PR took **9 commits** to merge. I didn't quit, and I didn't take the review comments personally. Every round taught me something, and that's why I now fix concurrency, memory and shared-state bugs in Celery and Microsoft Agent Framework: the kind that take patience just to reproduce. **Same person. Same persistence. Harder bugs.**
 
 ---
 
@@ -340,9 +354,5 @@ Offer sent to patelnamraa88@gmail.com
 <br/>
 
 <div align="center">
-
-*"My first open-source PR took 9 commits to get merged. Every one of them taught me something."*
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=110&section=footer" alt="" width="100%" />
-
+<img src="./footer.svg" alt="Every wrong answer builds understanding. Every merged PR builds confidence." width="100%" />
 </div>
