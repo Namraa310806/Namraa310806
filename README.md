@@ -14,7 +14,6 @@
 
 </div>
 
-<!-- UPDATE: replace https://codeforces.com/ above with https://codeforces.com/profile/<your-handle> -->
 
 <div align="center">
 <img src="./winner.svg" alt="Winner of JPMorgan Chase Code for Good 2026" width="100%" />
