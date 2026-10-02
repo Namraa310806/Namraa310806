@@ -7,13 +7,49 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/namraa-patel/)
 [![Portfolio](https://img.shields.io/badge/Portfolio-A78BFA?style=for-the-badge&logo=firefox&logoColor=white)](https://namraa310806.github.io/Portfolio/)
 [![LeetCode](https://img.shields.io/badge/LeetCode-2207-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/patelnamraa/)
+[![Codeforces](https://img.shields.io/badge/Codeforces-Expert_1731-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:patelnamraa88@gmail.com)
 
 <img src="https://komarev.com/ghpvc/?username=Namraa310806&label=Profile+Views&color=A78BFA&style=flat-square" alt="Profile views" />
 
 </div>
 
-<!-- UPDATE: Codeforces badge needs your handle -> https://codeforces.com/profile/<handle> -->
+<!-- UPDATE: replace https://codeforces.com/ above with https://codeforces.com/profile/<your-handle> -->
+
+---
+
+## `> choose your path`
+
+<details>
+<summary><b>🧑‍💼 I'm a recruiter. Give me 20 seconds.</b></summary>
+
+<br/>
+
+- **Looking for:** Summer 2027 SDE / Backend / ML internships
+- **Proof of work:** fixes merged into **Celery** and **Microsoft Agent Framework**, plus Open Food Facts
+- **Competitions:** JPMorgan Chase Code for Good 2026 winner · Amazon ML Challenge 2025 top 2,500 of 30,000+ · Codeforces Expert (1731) · LeetCode 2207
+- **Industry:** Django backend intern, cut average API response time by **25%** under production load
+- **Contact:** [patelnamraa88@gmail.com](mailto:patelnamraa88@gmail.com)
+
+</details>
+
+<details>
+<summary><b>🛠️ I'm an engineer. Show me the hard stuff.</b></summary>
+
+<br/>
+
+Scroll to the **bug autopsies** section. Two of them are animated: a reference-cycle memory leak and a re-entrant lock deadlock, both in Celery.
+
+</details>
+
+<details>
+<summary><b>🔧 I'm a maintainer. Will this person waste my time?</b></summary>
+
+<br/>
+
+Every PR below comes with a root cause, a minimal reproduction where it applies, and regression tests. In one review I flagged an uncovered edge case in my own fix before anyone asked. My first open source PR took 9 commits to merge, and I treat review feedback as the point, not an obstacle.
+
+</details>
 
 ---
 
@@ -25,6 +61,13 @@
 
 I don't just add features to open source. I go looking for the bugs that hide in **concurrency, memory and shared state**, trace them to the exact line, and fix them with tests that make sure they never come back.
 
+<div align="center">
+
+| 🐛 **5** upstream fixes | 🧬 **5** different bug classes | 🏷️ **3** in Celery **5.7.0** | 🧪 **0** fixes without tests |
+|:---:|:---:|:---:|:---:|
+
+</div>
+
 ---
 
 ## `> the pipeline`
@@ -35,19 +78,105 @@ I don't just add features to open source. I go looking for the bugs that hide in
 
 ---
 
-## `> bug autopsies`
+## `> 🔬 bug autopsies`
 
-Real bugs, real root causes, real maintainers reviewing.
+Watch the bug happen, then watch the fix. Each animation loops: **broken first, fixed second**.
 
-| PR | What was broken | Root cause | Outcome |
-|:---|:---|:---|:---|
-| [celery#10461](https://github.com/celery/celery/pull/10461) | `autoretry_for` shared state | A mutable default `retry_kwargs` dict was aliased across task retries | Minimal repro and fix; flagged an uncovered edge case in the `getattr` fallback during review |
-| [celery#10493](https://github.com/celery/celery/pull/10493) | Memory leak on hard timeout | `traceback_clear(exc)` silently failed because it targeted a frame still on the call stack | Removed the dead call, broke the exception-traceback-frame cycle with `exc.__traceback__ = None`; regression and smoke tests; **5.7.0** |
-| [celery#10497](https://github.com/celery/celery/pull/10497) | Deadlock in the Redis result backend | A redundant `UNSUBSCRIBE` re-entered redis-py's non-reentrant PubSub lock | Guarded the call; regression tests; **5.7.0** |
-| [celery#10510](https://github.com/celery/celery/pull/10510) | Certificate verification gap | A cert could expire mid-run and still pass signature checks (time-of-use gap) | Explicit expiry check ahead of verification; regression tests; **5.7.0** |
-| [agent-framework#7901](https://github.com/microsoft/agent-framework/pull/7901) | `SerializationMixin.from_dict()` mutating input | Merging dict-shaped dependencies updated the caller's nested dicts in place | Non-mutating merges and regression tests; **merged** |
+<div align="center">
 
-Also: accessibility fix for keyboard-navigable crop handles in [Open Food Facts Explorer](https://github.com/openfoodfacts/openfoodfacts-explorer/pull/1225), merged after full review. <!-- UPDATE: add your current GSSoC 2026 rank / PR count here once you confirm which number is right -->
+### Autopsy #1 · the leak that could not be freed
+
+<img src="./autopsy-leak.svg" alt="Animated diagram: exception, traceback and frame form a reference cycle that leaks memory until the cycle is cut" width="100%" />
+
+### Autopsy #2 · a thread that waits on itself
+
+<img src="./autopsy-deadlock.svg" alt="Animated diagram: a redundant UNSUBSCRIBE re-enters a non-reentrant lock and deadlocks until the call is guarded" width="100%" />
+
+</div>
+
+### The full case files
+
+<details>
+<summary><b>🧬 celery#10461</b> · shared-state mutation in <code>autoretry_for</code></summary>
+
+<br/>
+
+| | |
+|:---|:---|
+| **Bug class** | Shared mutable state |
+| **Symptom** | State leaking between task retries |
+| **Root cause** | A mutable default `retry_kwargs` dict was aliased across retries |
+| **Fix** | Minimal reproduction first, then the fix |
+| **Review** | Flagged an uncovered edge case in the `getattr` fallback branch |
+| **Link** | [celery/celery#10461](https://github.com/celery/celery/pull/10461) |
+
+</details>
+
+<details>
+<summary><b>🧬 celery#10493</b> · memory leak on the hard-timeout path</summary>
+
+<br/>
+
+| | |
+|:---|:---|
+| **Bug class** | Reference cycle / memory leak |
+| **Root cause** | `traceback_clear(exc)` was silently failing because it targeted a frame still on the call stack |
+| **Fix** | Removed the dead call and set `exc.__traceback__ = None` to break the exception, traceback, frame cycle |
+| **Proof** | Regression test plus a hard-timeout smoke test |
+| **Status** | Merged, **5.7.0** milestone |
+| **Link** | [celery/celery#10493](https://github.com/celery/celery/pull/10493) |
+
+</details>
+
+<details>
+<summary><b>🧬 celery#10497</b> · re-entrant lock deadlock in the Redis result backend</summary>
+
+<br/>
+
+| | |
+|:---|:---|
+| **Bug class** | Deadlock / re-entrancy |
+| **Root cause** | A redundant `UNSUBSCRIBE` could re-enter redis-py's non-reentrant PubSub lock |
+| **Fix** | Guarded the redundant call |
+| **Proof** | Regression tests |
+| **Status** | Merged, **5.7.0** |
+| **Link** | [celery/celery#10497](https://github.com/celery/celery/pull/10497) |
+
+</details>
+
+<details>
+<summary><b>🧬 celery#10510</b> · certificate expires mid-run, still passes</summary>
+
+<br/>
+
+| | |
+|:---|:---|
+| **Bug class** | Time-of-use gap (security) |
+| **Root cause** | A certificate could expire mid-run and still pass signature checks |
+| **Fix** | Explicit expiry check ahead of verification |
+| **Proof** | Regression tests |
+| **Status** | Merged, **5.7.0** |
+| **Link** | [celery/celery#10510](https://github.com/celery/celery/pull/10510) |
+
+</details>
+
+<details>
+<summary><b>🧬 agent-framework#7901</b> · <code>from_dict()</code> mutates the caller's input</summary>
+
+<br/>
+
+| | |
+|:---|:---|
+| **Bug class** | Unintended input mutation |
+| **Root cause** | `SerializationMixin.from_dict()` updated nested dictionaries in the caller's input in place when merging dictionary-shaped dependencies |
+| **Fix** | Replaced in-place updates with non-mutating merges |
+| **Proof** | Regression tests |
+| **Status** | Merged |
+| **Link** | [microsoft/agent-framework#7901](https://github.com/microsoft/agent-framework/pull/7901) |
+
+</details>
+
+Also merged: a keyboard-navigable crop handles accessibility fix in [Open Food Facts Explorer](https://github.com/openfoodfacts/openfoodfacts-explorer/pull/1225), after full review. <!-- UPDATE: add your confirmed GSSoC 2026 rank / PR count here -->
 
 ---
 
@@ -106,7 +235,55 @@ Random Forest on a custom-labeled dataset with OpenCV histogram features, deploy
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=python,java,cpp,js,ts,php,django,flask,fastapi,react,postgres,mysql,mongodb,redis,aws,docker,kubernetes,linux,git,tensorflow&perline=10" alt="Tech stack" />
+**Languages**
+
+<img src="https://skillicons.dev/icons?i=python,java,cpp,js,ts,php&perline=6" alt="Languages" />
+
+**Backend and databases**
+
+<img src="https://skillicons.dev/icons?i=django,flask,fastapi,postgres,mysql,mongodb,redis&perline=7" alt="Backend and databases" />
+
+![Celery](https://img.shields.io/badge/Celery-37814A?style=flat-square&logo=celery&logoColor=white)
+![DRF](https://img.shields.io/badge/Django_REST_Framework-A30000?style=flat-square&logo=django&logoColor=white)
+![REST APIs](https://img.shields.io/badge/REST_APIs-0f0c29?style=flat-square)
+
+**Cloud, systems and DevOps**
+
+<img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,linux,git,github&perline=6" alt="Cloud and DevOps" />
+
+![EC2](https://img.shields.io/badge/EC2-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
+![Lambda](https://img.shields.io/badge/Lambda-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
+![S3](https://img.shields.io/badge/S3-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
+![DynamoDB](https://img.shields.io/badge/DynamoDB-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
+![IAM](https://img.shields.io/badge/IAM-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
+![Cognito](https://img.shields.io/badge/Cognito-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
+![API Gateway](https://img.shields.io/badge/API_Gateway-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
+![CloudWatch](https://img.shields.io/badge/CloudWatch-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
+
+**Frontend**
+
+<img src="https://skillicons.dev/icons?i=react,html,css,bootstrap&perline=4" alt="Frontend" />
+
+**AI and ML**
+
+<img src="https://skillicons.dev/icons?i=tensorflow,sklearn,opencv,numpy,pandas&perline=5" alt="ML libraries" />
+
+![Hugging Face](https://img.shields.io/badge/Hugging_Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
+![RAG](https://img.shields.io/badge/RAG-302b63?style=flat-square)
+![Transformers](https://img.shields.io/badge/Transformer_Models-302b63?style=flat-square)
+![Model Evaluation](https://img.shields.io/badge/Model_Evaluation-302b63?style=flat-square)
+![OCI GenAI](https://img.shields.io/badge/OCI_Generative_AI_Professional-F80000?style=flat-square&logo=oracle&logoColor=white)
+
+**Core CS**
+
+![DSA](https://img.shields.io/badge/Data_Structures_%26_Algorithms-24243e?style=flat-square)
+![Concurrency](https://img.shields.io/badge/Concurrency_%26_Correctness-24243e?style=flat-square)
+![OOP](https://img.shields.io/badge/OOP-24243e?style=flat-square)
+![DBMS](https://img.shields.io/badge/DBMS-24243e?style=flat-square)
+![OS](https://img.shields.io/badge/Operating_Systems-24243e?style=flat-square)
+![CN](https://img.shields.io/badge/Computer_Networks-24243e?style=flat-square)
+![System Design](https://img.shields.io/badge/System_Design-24243e?style=flat-square)
 
 </div>
 
