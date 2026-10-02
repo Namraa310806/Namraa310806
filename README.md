@@ -50,7 +50,7 @@ Scroll to the **bug autopsies** section. Two of them are animated: a reference-c
 
 <br/>
 
-Every PR below comes with a root cause, a minimal reproduction where it applies, and regression tests. In one review I flagged an uncovered edge case in my own fix before anyone asked. My first open source PR took 9 commits to merge, and I treat review feedback as the point, not an obstacle.
+Every PR featured below comes with a root cause, a minimal reproduction where it applies, and regression tests. In one review I flagged an uncovered edge case in my own fix before anyone asked. My first open source PR took 9 commits to merge, and I treat review feedback as the point, not an obstacle.
 
 </details>
 
@@ -66,8 +66,12 @@ I don't just add features to open source. I go looking for the bugs that hide in
 
 <div align="center">
 
-| 🐛 **5** upstream fixes | 🧬 **5** different bug classes | 🏷️ **3** in Celery **5.7.0** | 🧪 **0** fixes without tests |
-|:---:|:---:|:---:|:---:|
+| 🎯 **My best 5** merged PRs are featured below | 🧬 **5** different bug classes among them | 🏷️ **3** landed in Celery **5.7.0** |
+|:---:|:---:|:---:|
+
+<sub>This is a hand-picked selection, not the full list. See everything on GitHub: [Celery](https://github.com/celery/celery/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged) · [Microsoft Agent Framework](https://github.com/microsoft/agent-framework/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged) · [Open Food Facts](https://github.com/openfoodfacts/openfoodfacts-explorer/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged)</sub>
+
+<!-- UPDATE: replace the line above with your real total, e.g. "XX+ merged PRs across Celery, Microsoft Agent Framework and Open Food Facts" -->
 
 </div>
 
@@ -79,7 +83,7 @@ I don't just add features to open source. I go looking for the bugs that hide in
 <img src="./resilience.svg" alt="9 commits to merge my first PR, then five upstream fixes" width="100%" />
 </div>
 
-My first open-source PR took **9 commits** to merge. I didn't quit, and I didn't take the review comments personally. Every round taught me something, and that's why I now fix concurrency, memory and shared-state bugs in Celery and Microsoft Agent Framework: the kind that take patience just to reproduce. **Same person. Same persistence. Harder bugs.**
+My first open-source PR took **9 commits** to merge. I didn't quit, and I didn't take the review comments personally. Every round taught me something, and that's why I now keep fixing concurrency, memory and shared-state bugs in Celery and Microsoft Agent Framework: the kind that take patience just to reproduce. **Same person. Same persistence. Harder bugs.**
 
 ---
 
@@ -93,7 +97,7 @@ My first open-source PR took **9 commits** to merge. I didn't quit, and I didn't
 
 ## `> 🔬 bug autopsies`
 
-Watch the bug happen, then watch the fix. Each animation loops: **broken first, fixed second**.
+Five of my favourite fixes, picked for the hardest root causes. Watch the bug happen, then watch the fix. Each animation loops: **broken first, fixed second**.
 
 <div align="center">
 
@@ -107,7 +111,7 @@ Watch the bug happen, then watch the fix. Each animation loops: **broken first, 
 
 </div>
 
-### The full case files
+### Case files · my best 5, not the full list
 
 <details>
 <summary><b>🧬 celery#10461</b> · shared-state mutation in <code>autoretry_for</code></summary>
@@ -189,7 +193,7 @@ Watch the bug happen, then watch the fix. Each animation loops: **broken first, 
 
 </details>
 
-Also merged: a keyboard-navigable crop handles accessibility fix in [Open Food Facts Explorer](https://github.com/openfoodfacts/openfoodfacts-explorer/pull/1225), after full review. <!-- UPDATE: add your confirmed GSSoC 2026 rank / PR count here -->
+Also merged, among many others: a keyboard-navigable crop handles accessibility fix in [Open Food Facts Explorer](https://github.com/openfoodfacts/openfoodfacts-explorer/pull/1225), after full review. <!-- UPDATE: add your confirmed GSSoC 2026 rank / PR count here -->
 
 ---
 
