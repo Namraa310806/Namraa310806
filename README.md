@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/hero.svg" alt="Namraa Patel - backend engineer and open source contributor" width="100%" />
+<img src="./hero.svg" alt="Namraa Patel - backend engineer and open source contributor" width="100%" />
 
 <br/>
 
@@ -20,7 +20,7 @@
 ## `> what I actually do`
 
 <div align="center">
-<img src="./assets/terminal.svg" alt="Terminal listing my upstream bug fixes" width="100%" />
+<img src="./terminal.svg" alt="Terminal listing my upstream bug fixes" width="100%" />
 </div>
 
 I don't just add features to open source. I go looking for the bugs that hide in **concurrency, memory and shared state**, trace them to the exact line, and fix them with tests that make sure they never come back.
@@ -30,7 +30,7 @@ I don't just add features to open source. I go looking for the bugs that hide in
 ## `> the pipeline`
 
 <div align="center">
-<img src="./assets/pipeline.svg" alt="Animated pipeline: detect, reproduce, fix and test, ship upstream" width="100%" />
+<img src="./pipeline.svg" alt="Animated pipeline: detect, reproduce, fix and test, ship upstream" width="100%" />
 </div>
 
 ---
