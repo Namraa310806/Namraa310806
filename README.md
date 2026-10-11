@@ -290,7 +290,7 @@ Every logo below is a real logo with its name written under it, and all of them 
 | 🎓 | **Oracle Certified**, OCI Generative AI Professional + Data Science Professional |
 | 🌍 | **GSSoC 2026**, nationally ranked open source contributor |
 | 🔥 | **Codeforces Expert (1731)** · **LeetCode 2207** |
-| 📚 | **PDEU B.Tech CSBS**, CGPA 9.46 / 10, graduating 2028 |
+| 📚 | **PDEU B.Tech CSBS**, CGPA 9.61 / 10, graduating 2028 |
 
 </details>
 
