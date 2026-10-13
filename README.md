@@ -7,10 +7,14 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/namraa-patel/)
 [![Portfolio](https://img.shields.io/badge/Portfolio-A78BFA?style=for-the-badge&logo=firefox&logoColor=white)](https://namraa310806.github.io/Portfolio/)
 [![LeetCode](https://img.shields.io/badge/LeetCode-2207-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/patelnamraa08/)
-[![Codeforces](https://img.shields.io/badge/Codeforces-Expert_1731-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/)
+[![Codeforces](https://img.shields.io/badge/Codeforces-Expert_1731-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/np254)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:patelnamraa88@gmail.com)
 
 <img src="https://komarev.com/ghpvc/?username=Namraa310806&label=Profile+Views&color=A78BFA&style=flat-square" alt="Profile views" />
+
+<br/><br/>
+
+<sub><a href="#autopsies"><b>Bug autopsies</b></a> · <a href="#projects"><b>Projects</b></a> · <a href="#experience"><b>Experience</b></a> · <a href="#skills"><b>Skills</b></a> · <a href="#wins"><b>Wins</b></a> · <a href="#contact"><b>Contact</b></a></sub>
 
 </div>
 
@@ -23,13 +27,15 @@
 
 ## `> choose your path`
 
-<details>
+<details open>
 <summary><b>🧑‍💼 I'm a recruiter. Give me 20 seconds.</b></summary>
 
 <br/>
 
 - **Looking for:** Summer 2027 SDE / Backend / ML internships
-- **Proof of work:** fixes merged into **Celery** and **Microsoft Agent Framework**, plus Open Food Facts
+- **Education:** B.Tech CSBS at PDEU, **CGPA 9.61 / 10** (graduating May 2028) · Diploma in CS, CGPA 9.78
+- **Proof of work:** 5 fixes merged into **Celery** and **Microsoft Agent Framework**, plus Open Food Facts
+- **Systems:** C++20 matching engine, **13.7K → 3.81M ops/s (278×)** on cancel-heavy load, validated under TSan/ASan/UBSan
 - **Competitions:** JPMorgan Chase Code for Good 2026 winner · Amazon ML Challenge 2025 top 2,500 of 30,000+ · Codeforces Expert (1731) · LeetCode 2207
 - **Industry:** Django backend intern, cut average API response time by **25%** under production load
 - **Contact:** [patelnamraa88@gmail.com](mailto:patelnamraa88@gmail.com)
@@ -41,7 +47,7 @@
 
 <br/>
 
-Scroll to the **bug autopsies** section. Two of them are animated: a reference-cycle memory leak and a re-entrant lock deadlock, both in Celery.
+Jump to the [**bug autopsies**](#autopsies): two animated walkthroughs of a reference-cycle memory leak and a re-entrant lock deadlock, both in Celery. Then see the [**matching engine**](#projects), where ThreadSanitizer caught a real memory-ordering race in my own lock-free queue.
 
 </details>
 
@@ -94,6 +100,8 @@ My first open-source PR took **9 commits** to merge. I didn't quit, and I didn't
 </div>
 
 ---
+
+<a id="autopsies"></a>
 
 ## `> 🔬 bug autopsies`
 
@@ -197,16 +205,34 @@ Also merged, among many others: a keyboard-navigable crop handles accessibility 
 
 ---
 
+<a id="projects"></a>
+
 ## `> things I've built`
 
-Four projects. Two of them have live architecture diagrams, so you can watch the data move.
+Five projects. Three of them have live architecture diagrams, so you can watch the data move.
 
 <div align="center">
 
-| ⚡ **−60%** synchronous processing load (TeamSense) | 🚀 **−25%** average API response time (Django internship) | ☁️ **0** EC2 instances (Personal Cloud Assistant) |
-|:---:|:---:|:---:|
+| 🏎️ **278×** cancel throughput (Matching Engine) | ⚡ **−60%** synchronous load (TeamSense) | 🚀 **−25%** API response time (Django internship) | ☁️ **0** servers to manage (Personal Cloud Assistant) |
+|:---:|:---:|:---:|:---:|
 
 </div>
+
+### 📈 [Limit Order Book & Matching Engine](https://github.com/Namraa310806/Matching-Engine) · C++20, lock-free, profiled
+
+<div align="center">
+<img src="./arch-matching-engine.svg" alt="Animated matching engine architecture: order flow into a lock-free SPSC queue, a single-writer matching core, a sorted-vector order book with intrusive lists, and a freelist object pool" width="100%" />
+</div>
+
+A price-time-priority engine with limit and market orders, partial fills, cancels and multiple instruments. Built to be **measured**, not just fast:
+
+- **Data structure:** swapped a map/deque book for **sorted-vector + intrusive lists** (O(1) cancel), taking cancel-heavy load from **13.7K to 3.81M ops/s (278×)**.
+- **Allocation:** a chunked **freelist object pool** (99.99% hit rate) added **+22–49%** throughput and up to **5× lower variance**. Profiling-driven tuning added another **+15%**, and experiments that regressed were reverted.
+- **Concurrency:** a **lock-free SPSC ingestion queue** (acquire/release ordering, single-writer matching thread). ThreadSanitizer found a **real memory-ordering race**, which I fixed. I also caught a silent-drop flaw in my own benchmark and re-validated with `submitted = processed` checks. **490 test runs** under ASan/UBSan/TSan.
+
+`C++20` `CMake` `GoogleTest` `Google Benchmark` `TSan` `ASan`
+
+---
 
 ### 🧠 [TeamSense](https://github.com/Namraa310806/TeamSense) · async HR analytics pipeline
 
@@ -259,6 +285,37 @@ Random Forest on a custom-labeled color dataset, with image patching and OpenCV 
 
 ---
 
+<a id="experience"></a>
+
+## `> experience & education`
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 💼 Django Backend Intern
+**Techaronic IT Solutions** · Ahmedabad · Jun – Aug 2024
+
+- Cut average API response time by **25%** under production load with database indexing and ORM query tuning
+- Built authentication and authorization workflows with request validation and access control
+- Deployed and debugged services on **AWS EC2** under live traffic
+
+</td>
+<td width="50%" valign="top">
+
+### 🎓 Education
+**PDEU, Gandhinagar**<br/>B.Tech, Computer Science & Business Systems<br/>**CGPA 9.61 / 10** · expected May 2028
+
+**Government Polytechnic Ahmedabad**<br/>Diploma Engineering, Computer Science<br/>**CGPA 9.78 / 10** · Aug 2022 – Apr 2025
+
+</td>
+</tr>
+</table>
+
+---
+
+<a id="skills"></a>
+
 ## `> arsenal`
 
 Every logo below is a real logo with its name written under it, and all of them live inside one file in this repo.
@@ -267,7 +324,24 @@ Every logo below is a real logo with its name written under it, and all of them 
 <img src="./stack.svg" alt="Tech stack: Python, Java, C++, JavaScript, TypeScript, PHP, Django, Flask, FastAPI, Celery, PostgreSQL, MySQL, MongoDB, Redis, AWS, Docker, Kubernetes, Linux, Git, GitHub, React, HTML5, CSS3, Bootstrap, TensorFlow, scikit-learn, OpenCV, NumPy, pandas, Hugging Face, Streamlit, Oracle OCI" width="100%" />
 </div>
 
+<details>
+<summary><b>📋 Prefer it as text?</b></summary>
+
+<br/>
+
+| | |
+|:---|:---|
+| **Core CS** | Data Structures & Algorithms, Concurrency & Correctness, OOP, DBMS, Operating Systems, Computer Networks, System Design |
+| **Languages** | Python, Java, C++, JavaScript, TypeScript, PHP |
+| **Backend & databases** | Django, REST APIs, Flask, FastAPI, PostgreSQL, MySQL, MongoDB, Redis |
+| **Cloud & systems** | AWS (EC2, Lambda, S3, DynamoDB, IAM), Docker, Kubernetes, Linux, Git |
+| **AI & ML** | RAG, Transformer models, TensorFlow, Hugging Face, model evaluation |
+
+</details>
+
 ---
+
+<a id="wins"></a>
 
 ## `> scoreboard`
 
@@ -290,7 +364,7 @@ Every logo below is a real logo with its name written under it, and all of them 
 | 🎓 | **Oracle Certified**, OCI Generative AI Professional + Data Science Professional |
 | 🌍 | **GSSoC 2026**, nationally ranked open source contributor |
 | 🔥 | **Codeforces Expert (1731)** · **LeetCode 2207** |
-| 📚 | **PDEU B.Tech CSBS**, CGPA 9.61 / 10, graduating 2028 |
+| 📚 | **PDEU B.Tech CSBS**, CGPA 9.61 / 10, graduating May 2028 · **Diploma CS**, CGPA 9.78 / 10 |
 
 </details>
 
@@ -302,7 +376,7 @@ Every logo below is a real logo with its name written under it, and all of them 
 
 | 🟢 **Contributing to** | 🎯 **Looking for** | 🎓 **Studying** |
 |:---:|:---:|:---:|
-| Celery · Microsoft Agent Framework · Open Food Facts | Summer 2027 SDE / Backend / ML internships | B.Tech CSBS at PDEU, graduating 2028 |
+| Celery · Microsoft Agent Framework · Open Food Facts | Summer 2027 SDE / Backend / ML internships | B.Tech CSBS at PDEU, CGPA 9.61, graduating May 2028 |
 
 </div>
 
@@ -326,6 +400,10 @@ Every logo below is a real logo with its name written under it, and all of them 
 </div>
 
 ---
+
+<a id="contact"></a>
+
+## `> contact`
 
 <div align="center">
 
