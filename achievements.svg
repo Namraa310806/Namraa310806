@@ -189,10 +189,10 @@
   <animate attributeName="width" values="0;150;150" keyTimes="0;0.06;1" dur="27s" repeatCount="indefinite"/>
 </rect>
 <text x="700" y="250" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#9ca3af">PDEU CGPA /10</text>
-<text x="960" y="250" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="700" fill="#34d399">9.46</text>
+<text x="960" y="250" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="700" fill="#34d399">9.61</text>
 <rect x="700" y="260" width="260" height="12" rx="6" fill="#161b22" stroke="#30363d"/>
-<rect x="700" y="260" width="245" height="12" rx="6" fill="#34d399">
-  <animate attributeName="width" values="0;245;245" keyTimes="0;0.06;1" dur="27s" repeatCount="indefinite"/>
+<rect x="700" y="260" width="250" height="12" rx="6" fill="#34d399">
+  <animate attributeName="width" values="0;250;250" keyTimes="0;0.06;1" dur="27s" repeatCount="indefinite"/>
 </rect>
 <text x="700" y="325" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6b7280">LeetCode + Codeforces bars scaled to 3000</text>
 </svg>
