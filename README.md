@@ -14,7 +14,7 @@
 
 <br/><br/>
 
-<sub><a href="#autopsies"><b>Bug autopsies</b></a> · <a href="#projects"><b>Projects</b></a> · <a href="#experience"><b>Experience</b></a> · <a href="#skills"><b>Skills</b></a> · <a href="#wins"><b>Wins</b></a> · <a href="#contact"><b>Contact</b></a></sub>
+<a href="#autopsies"><b>Bug autopsies</b></a> · <a href="#projects"><b>Projects</b></a> · <a href="#experience"><b>Experience</b></a> · <a href="#skills"><b>Skills</b></a> · <a href="#wins"><b>Wins</b></a> · <a href="#contact"><b>Contact</b></a>
 
 </div>
 
@@ -22,8 +22,6 @@
 <div align="center">
 <img src="./winner.svg" alt="Winner of JPMorgan Chase Code for Good 2026" width="100%" />
 </div>
-
----
 
 ## `> choose your path`
 
@@ -60,8 +58,6 @@ Every PR featured below comes with a root cause, a minimal reproduction where it
 
 </details>
 
----
-
 ## `> what I actually do`
 
 <div align="center">
@@ -81,8 +77,6 @@ I don't just add features to open source. I go looking for the bugs that hide in
 
 </div>
 
----
-
 ## `> the long game`
 
 <div align="center">
@@ -91,15 +85,11 @@ I don't just add features to open source. I go looking for the bugs that hide in
 
 My first open-source PR took **9 commits** to merge. I didn't quit, and I didn't take the review comments personally. Every round taught me something, and that's why I now keep fixing concurrency, memory and shared-state bugs in Celery and Microsoft Agent Framework: the kind that take patience just to reproduce. **Same person. Same persistence. Harder bugs.**
 
----
-
 ## `> the pipeline`
 
 <div align="center">
 <img src="./pipeline.svg" alt="Animated pipeline: detect, reproduce, fix and test, ship upstream" width="100%" />
 </div>
-
----
 
 <a id="autopsies"></a>
 
@@ -203,8 +193,6 @@ Five of my favourite fixes, picked for the hardest root causes. Watch the bug ha
 
 Also merged, among many others: a keyboard-navigable crop handles accessibility fix in [Open Food Facts Explorer](https://github.com/openfoodfacts/openfoodfacts-explorer/pull/1225), after full review. <!-- UPDATE: add your confirmed GSSoC 2026 rank / PR count here -->
 
----
-
 <a id="projects"></a>
 
 ## `> things I've built`
@@ -283,8 +271,6 @@ Random Forest on a custom-labeled color dataset, with image patching and OpenCV 
 </tr>
 </table>
 
----
-
 <a id="experience"></a>
 
 ## `> experience & education`
@@ -312,8 +298,6 @@ Random Forest on a custom-labeled color dataset, with image patching and OpenCV 
 </tr>
 </table>
 
----
-
 <a id="skills"></a>
 
 ## `> arsenal`
@@ -338,8 +322,6 @@ Every logo below is a real logo with its name written under it, and all of them 
 | **AI & ML** | RAG, Transformer models, TensorFlow, Hugging Face, model evaluation |
 
 </details>
-
----
 
 <a id="wins"></a>
 
@@ -368,8 +350,6 @@ Every logo below is a real logo with its name written under it, and all of them 
 
 </details>
 
----
-
 ## `> status`
 
 <div align="center">
@@ -379,8 +359,6 @@ Every logo below is a real logo with its name written under it, and all of them 
 | Celery · Microsoft Agent Framework · Open Food Facts | Summer 2027 SDE / Backend / ML internships | B.Tech CSBS at PDEU, CGPA 9.61, graduating May 2028 |
 
 </div>
-
----
 
 ## `> activity`
 
@@ -398,8 +376,6 @@ Every logo below is a real logo with its name written under it, and all of them 
 </picture>
 
 </div>
-
----
 
 <a id="contact"></a>
 
