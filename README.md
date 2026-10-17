@@ -1,115 +1,88 @@
 <div align="center">
 
-<img src="./hero.svg" alt="Namraa Patel - backend engineer and open source contributor" width="100%" />
+<img src="./assets/hero.svg" alt="Namraa Patel: backend and systems engineer, open source bug hunter" width="100%" />
 
 <br/>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/namraa-patel/)
+**I find difficult bugs in concurrency, memory and shared state, then get the fixes upstream.**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Namraa310806-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Namraa310806)
 [![Portfolio](https://img.shields.io/badge/Portfolio-A78BFA?style=for-the-badge&logo=firefox&logoColor=white)](https://namraa310806.github.io/Portfolio/)
-[![LeetCode](https://img.shields.io/badge/LeetCode-2207-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/patelnamraa08/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/namraa-patel/)
 [![Codeforces](https://img.shields.io/badge/Codeforces-Expert_1731-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/np254)
+[![LeetCode](https://img.shields.io/badge/LeetCode-2207-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/patelnamraa08/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:patelnamraa88@gmail.com)
 
-<img src="https://komarev.com/ghpvc/?username=Namraa310806&label=Profile+Views&color=A78BFA&style=flat-square" alt="Profile views" />
-
-<br/><br/>
-
-<a href="#autopsies"><b>Bug autopsies</b></a> · <a href="#projects"><b>Projects</b></a> · <a href="#experience"><b>Experience</b></a> · <a href="#skills"><b>Skills</b></a> · <a href="#wins"><b>Wins</b></a> · <a href="#contact"><b>Contact</b></a>
-
-</div>
-
-
-<div align="center">
-<img src="./winner.svg" alt="Winner of JPMorgan Chase Code for Good 2026" width="100%" />
-</div>
-
-## `> choose your path`
-
-<details open>
-<summary><b>🧑‍💼 I'm a recruiter. Give me 20 seconds.</b></summary>
+<a href="#proof"><b>Proof</b></a> · <a href="#autopsies"><b>Bug autopsies</b></a> · <a href="#systems"><b>Systems</b></a> · <a href="#experience"><b>Experience</b></a> · <a href="#contact"><b>Contact</b></a>
 
 <br/>
 
-- **Looking for:** Summer 2027 SDE / Backend / ML internships
-- **Education:** B.Tech CSBS at PDEU, **CGPA 9.61 / 10** (graduating May 2028) · Diploma in CS, CGPA 9.78
-- **Proof of work:** 5 fixes merged into **Celery** and **Microsoft Agent Framework**, plus Open Food Facts
-- **Systems:** C++20 matching engine, **13.7K → 3.81M ops/s (278×)** on cancel-heavy load, validated under TSan/ASan/UBSan
-- **Competitions:** JPMorgan Chase Code for Good 2026 winner · Amazon ML Challenge 2025 top 2,500 of 30,000+ · Codeforces Expert (1731) · LeetCode 2207
-- **Industry:** Django backend intern, cut average API response time by **25%** under production load
-- **Contact:** [patelnamraa88@gmail.com](mailto:patelnamraa88@gmail.com)
-
-</details>
-
-<details>
-<summary><b>🛠️ I'm an engineer. Show me the hard stuff.</b></summary>
-
-<br/>
-
-Jump to the [**bug autopsies**](#autopsies): two animated walkthroughs of a reference-cycle memory leak and a re-entrant lock deadlock, both in Celery. Then see the [**matching engine**](#projects), where ThreadSanitizer caught a real memory-ordering race in my own lock-free queue.
-
-</details>
-
-<details>
-<summary><b>🔧 I'm a maintainer. Will this person waste my time?</b></summary>
-
-<br/>
-
-Every PR featured below comes with a root cause, a minimal reproduction where it applies, and regression tests. In one review I flagged an uncovered edge case in my own fix before anyone asked. My first open source PR took 9 commits to merge, and I treat review feedback as the point, not an obstacle.
-
-</details>
-
-## `> what I actually do`
-
-<div align="center">
-<img src="./terminal.svg" alt="Terminal listing my upstream bug fixes" width="100%" />
-</div>
-
-I don't just add features to open source. I go looking for the bugs that hide in **concurrency, memory and shared state**, trace them to the exact line, and fix them with tests that make sure they never come back.
-
-<div align="center">
-
-| 🎯 **My best 5** merged PRs are featured below | 🧬 **5** different bug classes among them | 🏷️ **3** landed in Celery **5.7.0** |
-|:---:|:---:|:---:|
-
-<sub>This is a hand-picked selection, not the full list. See everything on GitHub: [Celery](https://github.com/celery/celery/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged) · [Microsoft Agent Framework](https://github.com/microsoft/agent-framework/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged) · [Open Food Facts](https://github.com/openfoodfacts/openfoodfacts-explorer/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged)</sub>
-
-<!-- UPDATE: replace the line above with your real total, e.g. "XX+ merged PRs across Celery, Microsoft Agent Framework and Open Food Facts" -->
+<img src="./assets/winner.svg" alt="Winner of JPMorgan Chase Code for Good 2026" width="100%" />
 
 </div>
 
-## `> the long game`
+## `> whoami`
+
+```text
+$ whoami
+
+namraa@upstream
+
+role       backend / systems engineer
+specialty  concurrency · memory · shared state
+hunting    race conditions · deadlocks · leaks
+weapon     minimal reproductions + regression tests
+habitat    Celery · Python · C++
+status     open to Summer 2027 SDE / Backend / ML internships
+```
+
+<a id="proof"></a>
+
+## `> the 20-second version`
 
 <div align="center">
-<img src="./resilience.svg" alt="9 commits to merge my first PR, then five upstream fixes" width="100%" />
+
+| **5** | **5** | **4** | **278×** | **9.61** |
+|:---:|:---:|:---:|:---:|:---:|
+| featured contributions | bug classes | merged in Celery | matching throughput | B.Tech CGPA |
+
+**5 featured PRs: 4 in Celery, 1 in Microsoft Agent Framework · plus Open Food Facts**
+
+<img src="./assets/upstream.svg" alt="Terminal listing five merged upstream fixes: four in Celery and one in Microsoft Agent Framework" width="100%" />
+
+<sub>Selected highlights from a broader open-source contribution history. Everything on GitHub: [Celery](https://github.com/celery/celery/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged) · [Microsoft Agent Framework](https://github.com/microsoft/agent-framework/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged) · [Open Food Facts](https://github.com/openfoodfacts/openfoodfacts-explorer/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged)</sub>
+
 </div>
 
-My first open-source PR took **9 commits** to merge. I didn't quit, and I didn't take the review comments personally. Every round taught me something, and that's why I now keep fixing concurrency, memory and shared-state bugs in Celery and Microsoft Agent Framework: the kind that take patience just to reproduce. **Same person. Same persistence. Harder bugs.**
-
-## `> the pipeline`
-
-<div align="center">
-<img src="./pipeline.svg" alt="Animated pipeline: detect, reproduce, fix and test, ship upstream" width="100%" />
-</div>
+**For maintainers:** every PR below comes with a root cause, a minimal reproduction where it applies, and regression tests. In one review I flagged an uncovered edge case in my own fix before anyone asked. My first open source PR took 9 commits to merge, and I treat review feedback as the point, not an obstacle.
 
 <a id="autopsies"></a>
 
-## `> 🔬 bug autopsies`
+## `> bug autopsies`
 
-Five of my favourite fixes, picked for the hardest root causes. Watch the bug happen, then watch the fix. Each animation loops: **broken first, fixed second**.
+| Bug | System | Failure | Fix |
+|:---|:---|:---|:---|
+| 🧠 Memory leak | Celery | reference cycle on the hard-timeout path | traceback cleanup that actually runs |
+| 🔒 Deadlock | Celery · Redis backend | re-entrant lock | guard on the redundant `UNSUBSCRIBE` |
+| 🧬 State leak | Celery | mutable default aliased across retries | retry state no longer shared |
+| 🔐 Time-of-use gap | Celery | expired certificate still verified | explicit expiry check |
+| 🧱 Input mutation | Agent Framework | caller's nested dicts changed in place | non-mutating merge |
+
+**Pick one to investigate.** Each animation loops: broken first, fixed second.
 
 <div align="center">
 
 ### Autopsy #1 · the leak that could not be freed
 
-<img src="./autopsy-leak.svg" alt="Animated diagram: exception, traceback and frame form a reference cycle that leaks memory until the cycle is cut" width="100%" />
+<img src="./assets/autopsies/leak.svg" alt="Animated diagram: exception, traceback and frame form a reference cycle that leaks memory until the cycle is cut" width="100%" />
 
 ### Autopsy #2 · a thread that waits on itself
 
-<img src="./autopsy-deadlock.svg" alt="Animated diagram: a redundant UNSUBSCRIBE re-enters a non-reentrant lock and deadlocks until the call is guarded" width="100%" />
+<img src="./assets/autopsies/deadlock.svg" alt="Animated diagram: a redundant UNSUBSCRIBE re-enters a non-reentrant lock and deadlocks until the call is guarded" width="100%" />
 
 </div>
 
-### Case files · my best 5, not the full list
+### Case files
 
 <details>
 <summary><b>🧬 celery#10461</b> · shared-state mutation in <code>autoretry_for</code></summary>
@@ -154,7 +127,7 @@ Five of my favourite fixes, picked for the hardest root causes. Watch the bug ha
 | **Root cause** | A redundant `UNSUBSCRIBE` could re-enter redis-py's non-reentrant PubSub lock |
 | **Fix** | Guarded the redundant call |
 | **Proof** | Regression tests |
-| **Status** | Merged, **5.7.0** |
+| **Status** | Merged, **5.7.0** milestone |
 | **Link** | [celery/celery#10497](https://github.com/celery/celery/pull/10497) |
 
 </details>
@@ -170,7 +143,7 @@ Five of my favourite fixes, picked for the hardest root causes. Watch the bug ha
 | **Root cause** | A certificate could expire mid-run and still pass signature checks |
 | **Fix** | Explicit expiry check ahead of verification |
 | **Proof** | Regression tests |
-| **Status** | Merged, **5.7.0** |
+| **Status** | Merged, **5.7.0** milestone |
 | **Link** | [celery/celery#10510](https://github.com/celery/celery/pull/10510) |
 
 </details>
@@ -191,25 +164,21 @@ Five of my favourite fixes, picked for the hardest root causes. Watch the bug ha
 
 </details>
 
-Also merged, among many others: a keyboard-navigable crop handles accessibility fix in [Open Food Facts Explorer](https://github.com/openfoodfacts/openfoodfacts-explorer/pull/1225), after full review. <!-- UPDATE: add your confirmed GSSoC 2026 rank / PR count here -->
+Also merged: a keyboard-navigable crop handles accessibility fix in [Open Food Facts Explorer](https://github.com/openfoodfacts/openfoodfacts-explorer/pull/1225), after full review. 
 
-<a id="projects"></a>
+<a id="systems"></a>
 
-## `> things I've built`
+## `> 01 / matching engine`
 
-Five projects. Three of them have live architecture diagrams, so you can watch the data move.
+### [Limit Order Book & Matching Engine](https://github.com/Namraa310806/Matching-Engine) · 278× faster cancel-heavy workload
 
-<div align="center">
-
-| 🏎️ **278×** cancel throughput (Matching Engine) | ⚡ **−60%** synchronous load (TeamSense) | 🚀 **−25%** API response time (Django internship) | ☁️ **0** servers to manage (Personal Cloud Assistant) |
-|:---:|:---:|:---:|:---:|
-
-</div>
-
-### 📈 [Limit Order Book & Matching Engine](https://github.com/Namraa310806/Matching-Engine) · C++20, lock-free, profiled
+```text
+13.7K ops/s  ──────────────────────────────►  3.81M ops/s
+C++20 · lock-free SPSC · single-writer architecture
+```
 
 <div align="center">
-<img src="./arch-matching-engine.svg" alt="Animated matching engine architecture: order flow into a lock-free SPSC queue, a single-writer matching core, a sorted-vector order book with intrusive lists, and a freelist object pool" width="100%" />
+<img src="./assets/architectures/matching-engine.svg" alt="Animated matching engine architecture: order flow into a lock-free SPSC queue, a single-writer matching core, a sorted-vector order book with intrusive lists, and a freelist object pool" width="100%" />
 </div>
 
 A price-time-priority engine with limit and market orders, partial fills, cancels and multiple instruments. Built to be **measured**, not just fast:
@@ -220,31 +189,27 @@ A price-time-priority engine with limit and market orders, partial fills, cancel
 
 `C++20` `CMake` `GoogleTest` `Google Benchmark` `TSan` `ASan`
 
----
+## `> more systems`
 
-### 🧠 [TeamSense](https://github.com/Namraa310806/TeamSense) · async HR analytics pipeline
+### 🧠 [TeamSense](https://github.com/Namraa310806/TeamSense) · async HR analytics pipeline · **−60%** synchronous load
 
 <div align="center">
-<img src="./arch-teamsense.svg" alt="Animated TeamSense architecture: React dashboard, DRF API, Redis queue, Celery workers, PostgreSQL, all in Docker" width="100%" />
+<img src="./assets/architectures/teamsense.svg" alt="Animated TeamSense architecture: React dashboard, DRF API, Redis queue, Celery workers, PostgreSQL, all in Docker" width="100%" />
 </div>
 
 HR teams work across fragmented tools. TeamSense ingests employee data and surfaces it on one dashboard. Compute-heavy feedback processing runs in a **Celery + Redis** pipeline instead of the request cycle, which cut synchronous processing load by **60%**. Multi-entity **PostgreSQL** schema for employees, meetings and feedback, containerized with **Docker**.
 
 `Django` `DRF` `Celery` `Redis` `PostgreSQL` `Docker` `React`
 
----
-
 ### ☁️ [Personal Cloud Assistant](https://github.com/Namraa310806/AWSPeronsalCloudAssistant) · serverless on AWS · [live demo](https://main.d1xrjjt0e3swym.amplifyapp.com)
 
 <div align="center">
-<img src="./arch-cloud.svg" alt="Animated Personal Cloud Assistant architecture: React, Cognito, API Gateway, Lambda, DynamoDB, S3, CloudWatch" width="100%" />
+<img src="./assets/architectures/cloud-assistant.svg" alt="Animated Personal Cloud Assistant architecture: React, Cognito, API Gateway, Lambda, DynamoDB, S3, CloudWatch" width="100%" />
 </div>
 
 Notes and file management with no servers to maintain. Stateless **Lambda + API Gateway** backend, **DynamoDB** for notes, **S3** with presigned URLs for files, **Cognito** JWT auth with **least-privilege IAM**, custom **CloudWatch** metrics (operation counts, request duration, errors) behind an admin-only dashboard, and a **React 19** frontend deployed through Amplify CI/CD.
 
 `Lambda` `API Gateway` `DynamoDB` `S3` `Cognito` `CloudWatch` `React`
-
----
 
 <table>
 <tr>
@@ -298,37 +263,21 @@ Random Forest on a custom-labeled color dataset, with image patching and OpenCV 
 </tr>
 </table>
 
-<a id="skills"></a>
-
 ## `> arsenal`
-
-Every logo below is a real logo with its name written under it, and all of them live inside one file in this repo.
-
-<div align="center">
-<img src="./stack.svg" alt="Tech stack: Python, Java, C++, JavaScript, TypeScript, PHP, Django, Flask, FastAPI, Celery, PostgreSQL, MySQL, MongoDB, Redis, AWS, Docker, Kubernetes, Linux, Git, GitHub, React, HTML5, CSS3, Bootstrap, TensorFlow, scikit-learn, OpenCV, NumPy, pandas, Hugging Face, Streamlit, Oracle OCI" width="100%" />
-</div>
-
-<details>
-<summary><b>📋 Prefer it as text?</b></summary>
-
-<br/>
 
 | | |
 |:---|:---|
-| **Core CS** | Data Structures & Algorithms, Concurrency & Correctness, OOP, DBMS, Operating Systems, Computer Networks, System Design |
-| **Languages** | Python, Java, C++, JavaScript, TypeScript, PHP |
-| **Backend & databases** | Django, REST APIs, Flask, FastAPI, PostgreSQL, MySQL, MongoDB, Redis |
-| **Cloud & systems** | AWS (EC2, Lambda, S3, DynamoDB, IAM), Docker, Kubernetes, Linux, Git |
-| **AI & ML** | RAG, Transformer models, TensorFlow, Hugging Face, model evaluation |
-
-</details>
-
-<a id="wins"></a>
+| **Languages** | `Python` `C++` `Java` `JavaScript` `TypeScript` `PHP` |
+| **Backend** | `Django` `DRF` `FastAPI` `Flask` `Celery` |
+| **Data** | `PostgreSQL` `Redis` `MongoDB` `MySQL` |
+| **Systems / Cloud** | `AWS` `Docker` `Kubernetes` `Linux` `Git` |
+| **ML** | `scikit-learn` `TensorFlow` `OpenCV` `Hugging Face` |
+| **Core CS** | DSA, Concurrency & Correctness, OOP, DBMS, OS, Networks, System Design |
 
 ## `> scoreboard`
 
 <div align="center">
-<img src="./achievements.svg" alt="Animated achievement cards: JPMorgan Chase Code for Good winner, Open Source Hackathon winner, Amazon ML Challenge top 2,500, Google The Big Code round 2, Hackout finalist, Oracle certifications, GSSoC 2026, Celery 5.7.0" width="100%" />
+<img src="./assets/achievements.svg" alt="Animated achievement cards: JPMorgan Chase Code for Good winner, Open Source Hackathon winner, Amazon ML Challenge top 2,500, Google The Big Code round 2, Hackout finalist, Oracle certifications, Codeforces Expert, Celery 5.7.0" width="100%" />
 </div>
 
 <details>
@@ -344,38 +293,9 @@ Every logo below is a real logo with its name written under it, and all of them 
 | 🔎 | **Google The Big Code 2026**, qualified for Round 2 |
 | 🏁 | **Hackout 2025**, finalist |
 | 🎓 | **Oracle Certified**, OCI Generative AI Professional + Data Science Professional |
-| 🌍 | **GSSoC 2026**, nationally ranked open source contributor |
 | 🔥 | **Codeforces Expert (1731)** · **LeetCode 2207** |
-| 📚 | **PDEU B.Tech CSBS**, CGPA 9.61 / 10, graduating May 2028 · **Diploma CS**, CGPA 9.78 / 10 |
 
 </details>
-
-## `> status`
-
-<div align="center">
-
-| 🟢 **Contributing to** | 🎯 **Looking for** | 🎓 **Studying** |
-|:---:|:---:|:---:|
-| Celery · Microsoft Agent Framework · Open Food Facts | Summer 2027 SDE / Backend / ML internships | B.Tech CSBS at PDEU, CGPA 9.61, graduating May 2028 |
-
-</div>
-
-## `> activity`
-
-<div align="center">
-
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=Namraa310806&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=A78BFA" alt="GitHub stats" />
-<img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=Namraa310806&theme=tokyonight&hide_border=true&background=0D1117&ring=A78BFA&fire=F472B6&currStreakLabel=A78BFA" alt="GitHub streak" />
-
-<br/><br/>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Namraa310806/Namraa310806/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Namraa310806/Namraa310806/output/github-snake.svg" />
-  <img alt="Contribution snake eating my commits" src="https://raw.githubusercontent.com/Namraa310806/Namraa310806/output/github-snake-dark.svg" />
-</picture>
-
-</div>
 
 <a id="contact"></a>
 
@@ -384,12 +304,10 @@ Every logo below is a real logo with its name written under it, and all of them 
 <div align="center">
 
 <a href="mailto:patelnamraa88@gmail.com">
-  <img src="./cta.svg" alt="Got a bug that only shows up in production? Let's talk. patelnamraa88@gmail.com" width="100%" />
+  <img src="./assets/cta.svg" alt="Got a bug that only shows up in production? Let's talk. patelnamraa88@gmail.com" width="100%" />
 </a>
 
 </div>
-
-<br/>
 
 <details>
 <summary><b>🧨 please don't open this</b></summary>
@@ -407,9 +325,3 @@ Offer sent to patelnamraa88@gmail.com
 ```
 
 </details>
-
-<br/>
-
-<div align="center">
-<img src="./footer.svg" alt="Every wrong answer builds understanding. Every merged PR builds confidence." width="100%" />
-</div>

@@ -85,7 +85,7 @@
     <text x="40" y="318" font-size="14" fill="#f87171" opacity="1">redundant UNSUBSCRIBE re-enters redis-py's non-reentrant PubSub lock: deadlock.
       <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.49;0.5;0.99;1" dur="12s" repeatCount="indefinite"/>
     </text>
-    <text x="40" y="318" font-size="14" fill="#34d399" opacity="0">guard the call: lock is never re-entered. regression tests added, merged into 5.7.0.
+    <text x="40" y="318" font-size="14" fill="#34d399" opacity="0">guard the call: lock is never re-entered. regression tests added, merged, 5.7.0 milestone.
       <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5;0.51;0.99;1" dur="12s" repeatCount="indefinite"/>
     </text>
   </g>
