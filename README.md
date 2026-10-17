@@ -21,6 +21,41 @@
 
 </div>
 
+## `> choose your path`
+
+<details open>
+<summary><b>🧑‍💼 I'm a recruiter. Give me 20 seconds.</b></summary>
+
+<br/>
+
+- **Looking for:** Summer 2027 SDE / Backend / ML internships
+- **Education:** B.Tech CSBS at PDEU, **CGPA 9.61 / 10** (graduating May 2028) · Diploma in CS, CGPA 9.78
+- **Proof of work:** 5 fixes merged into **Celery** and **Microsoft Agent Framework**, plus Open Food Facts
+- **Systems:** C++20 matching engine, **13.7K → 3.81M ops/s (278×)** on cancel-heavy load, validated under TSan/ASan/UBSan
+- **Competitions:** JPMorgan Chase Code for Good 2026 winner · Amazon ML Challenge 2025 top 2,500 of 30,000+ · Codeforces Expert (1731) · LeetCode 2207
+- **Industry:** Django backend intern, cut average API response time by **25%** under production load
+- **Contact:** [patelnamraa88@gmail.com](mailto:patelnamraa88@gmail.com)
+
+</details>
+
+<details>
+<summary><b>🛠️ I'm an engineer. Show me the hard stuff.</b></summary>
+
+<br/>
+
+Jump to the [**bug autopsies**](#autopsies): two animated walkthroughs of a reference-cycle memory leak and a re-entrant lock deadlock, both in Celery. Then see the [**matching engine**](#systems), where ThreadSanitizer caught a real memory-ordering race in my own lock-free queue.
+
+</details>
+
+<details>
+<summary><b>🔧 I'm a maintainer. Will this person waste my time?</b></summary>
+
+<br/>
+
+Every PR featured below comes with a root cause, a minimal reproduction where it applies, and regression tests. In one review I flagged an uncovered edge case in my own fix before anyone asked. My first open source PR took 9 commits to merge, and I treat review feedback as the point, not an obstacle.
+
+</details>
+
 ## `> whoami`
 
 ```text
@@ -53,8 +88,6 @@ status     open to Summer 2027 SDE / Backend / ML internships
 <sub>Selected highlights from a broader open-source contribution history. Everything on GitHub: [Celery](https://github.com/celery/celery/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged) · [Microsoft Agent Framework](https://github.com/microsoft/agent-framework/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged) · [Open Food Facts](https://github.com/openfoodfacts/openfoodfacts-explorer/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged)</sub>
 
 </div>
-
-**For maintainers:** every PR below comes with a root cause, a minimal reproduction where it applies, and regression tests. In one review I flagged an uncovered edge case in my own fix before anyone asked. My first open source PR took 9 commits to merge, and I treat review feedback as the point, not an obstacle.
 
 <a id="autopsies"></a>
 
