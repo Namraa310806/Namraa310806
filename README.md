@@ -9,7 +9,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-Namraa310806-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Namraa310806)
 [![Portfolio](https://img.shields.io/badge/Portfolio-A78BFA?style=for-the-badge&logo=firefox&logoColor=white)](https://namraa310806.github.io/Portfolio/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/namraa-patel/)
-[![Codeforces](https://img.shields.io/badge/Codeforces-Expert_1731-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/np254)
+[![Codeforces](https://img.shields.io/badge/Codeforces-Expert_1664-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/hacker08)
 [![LeetCode](https://img.shields.io/badge/LeetCode-2207-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/patelnamraa08/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:patelnamraa88@gmail.com)
 
@@ -36,7 +36,7 @@
 - **Education:** B.Tech CSBS at PDEU, **CGPA 9.61 / 10** (graduating May 2028) · Diploma in CS, CGPA 9.78
 - **Proof of work:** 5 fixes merged into **Celery** and **Microsoft Agent Framework**, plus Open Food Facts
 - **Systems:** C++20 matching engine, **13.7K → 3.81M ops/s (278×)** on cancel-heavy load, validated under TSan/ASan/UBSan
-- **Competitions:** JPMorgan Chase Code for Good 2026 winner · Amazon ML Challenge 2025 top 2,500 of 30,000+ · Codeforces Expert (1731) · LeetCode 2207
+- **Competitions:** JPMorgan Chase Code for Good 2026 winner · Amazon ML Challenge 2025 top 2,500 of 30,000+ · Codeforces Expert (max 1664) · LeetCode 2207
 - **Industry:** Django backend intern, cut average API response time by **25%** under production load
 - **Contact:** [patelnamraa88@gmail.com](mailto:patelnamraa88@gmail.com)
 
@@ -330,7 +330,7 @@ Random Forest on a custom-labeled color dataset, with image patching and OpenCV 
 | 🔎 | **Google The Big Code 2026**, qualified for Round 2 |
 | 🏁 | **Hackout 2025**, finalist |
 | 🎓 | **Oracle Certified**, OCI Generative AI Professional + Data Science Professional |
-| 🔥 | **Codeforces Expert (1731)** · **LeetCode 2207** |
+| 🔥 | **Codeforces Expert (max 1664)** · **LeetCode 2207** |
 
 </details>
 
