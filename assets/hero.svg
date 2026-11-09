@@ -73,13 +73,13 @@
     <text x="60" y="195" opacity="0">Backend · Systems · Cloud
       <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.015;0.235;0.250;1" dur="16s" repeatCount="indefinite"/>
     </text>
-    <text x="60" y="195" opacity="0">Fixing concurrency bugs in Celery, upstream
+    <text x="60" y="195" opacity="0">Merged into Celery · Django · Microsoft · OFF
       <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.250;0.265;0.485;0.500;1" dur="16s" repeatCount="indefinite"/>
     </text>
     <text x="60" y="195" opacity="0">C++ matching engine · 278× faster cancels
       <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.500;0.515;0.735;0.750;1" dur="16s" repeatCount="indefinite"/>
     </text>
-    <text x="60" y="195" opacity="0">Codeforces Expert (max 1664) · LeetCode 2207
+    <text x="60" y="195" opacity="0">Codeforces Expert (1704) · LeetCode 2207
       <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.750;0.765;0.985;1" dur="16s" repeatCount="indefinite"/>
     </text>
   </g>
