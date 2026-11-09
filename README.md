@@ -4,18 +4,21 @@
 
 <br/>
 
-**I find difficult bugs in concurrency, memory and shared state, then get the fixes upstream.**
+**I find difficult bugs in concurrency, memory and shared state, then get the fixes merged into Celery, Django, Microsoft Agent Framework and Open Food Facts.**
+
+[![Django](https://img.shields.io/badge/Django-Contributor-092E20?style=for-the-badge&logo=django&logoColor=white)](https://github.com/django/django/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged)
+[![Celery](https://img.shields.io/badge/Celery-Contributor-37814A?style=for-the-badge&logo=celery&logoColor=white)](https://github.com/celery/celery/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged)
+[![Microsoft Agent Framework](https://img.shields.io/badge/Microsoft_Agent_Framework-Contributor-0078D4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/microsoft/agent-framework/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged)
+[![Open Food Facts](https://img.shields.io/badge/Open_Food_Facts-Contributor-FF8714?style=for-the-badge&logoColor=white)](https://github.com/openfoodfacts/openfoodfacts-explorer/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged)
 
 [![GitHub](https://img.shields.io/badge/GitHub-Namraa310806-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Namraa310806)
 [![Portfolio](https://img.shields.io/badge/Portfolio-A78BFA?style=for-the-badge&logo=firefox&logoColor=white)](https://namraa310806.github.io/Portfolio/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/namraa-patel/)
-[![Codeforces](https://img.shields.io/badge/Codeforces-Expert_1664-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/hacker08)
+[![Codeforces](https://img.shields.io/badge/Codeforces-Expert_1704-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/hacker08)
 [![LeetCode](https://img.shields.io/badge/LeetCode-2207-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/patelnamraa08/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:patelnamraa88@gmail.com)
 
-[![Celery](https://img.shields.io/badge/Celery-Contributor-37814A?style=for-the-badge&logo=celery&logoColor=white)](https://github.com/celery/celery/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged)
-[![Microsoft Agent Framework](https://img.shields.io/badge/Microsoft_Agent_Framework-Contributor-0078D4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/microsoft/agent-framework/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged)
-[![Open Food Facts](https://img.shields.io/badge/Open_Food_Facts-Contributor-FF8714?style=for-the-badge&logo=openfoodfacts&logoColor=white)](https://github.com/openfoodfacts/openfoodfacts-explorer/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged)
+<img src="./assets/orgs.svg" alt="Open source contributor to Celery, Django, Microsoft Agent Framework and Open Food Facts" width="100%" />
 
 <a href="#proof"><b>Proof</b></a> · <a href="#autopsies"><b>Bug autopsies</b></a> · <a href="#systems"><b>Systems</b></a> · <a href="#experience"><b>Experience</b></a> · <a href="#contact"><b>Contact</b></a>
 
@@ -34,9 +37,9 @@
 
 - **Looking for:** Summer 2027 SDE / Backend / ML internships
 - **Education:** B.Tech CSBS at PDEU, **CGPA 9.61 / 10** (graduating May 2028) · Diploma in CS, CGPA 9.78
-- **Proof of work:** 5 fixes merged into **Celery** and **Microsoft Agent Framework**, plus Open Food Facts
+- **Proof of work:** Merged fixes in **Celery**, **Django**, **Microsoft Agent Framework** and **Open Food Facts**, shipped in Celery 5.7.0 and Agent Framework 1.19.0 / 1.22.0
 - **Systems:** C++20 matching engine, **13.7K → 3.81M ops/s (278×)** on cancel-heavy load, validated under TSan/ASan/UBSan
-- **Competitions:** JPMorgan Chase Code for Good 2026 winner · Amazon ML Challenge 2025 top 2,500 of 30,000+ · Codeforces Expert (max 1664) · LeetCode 2207
+- **Competitions:** JPMorgan Chase Code for Good 2026 winner · Amazon ML Challenge 2025 top 2,500 of 30,000+ · Codeforces Expert (1704) · LeetCode 2207
 - **Industry:** Django backend intern, cut average API response time by **25%** under production load
 - **Contact:** [patelnamraa88@gmail.com](mailto:patelnamraa88@gmail.com)
 
@@ -47,7 +50,7 @@
 
 <br/>
 
-Jump to the [**bug autopsies**](#autopsies): two animated walkthroughs of a reference-cycle memory leak and a re-entrant lock deadlock, both in Celery. Then see the [**matching engine**](#systems), where ThreadSanitizer caught a real memory-ordering race in my own lock-free queue.
+Jump to the [**bug autopsies**](#autopsies): a Redis chord race in Celery, a Django ORM overwrite bug, workflow state leaking between runs in Agent Framework, plus two animated walkthroughs (a reference-cycle leak and a re-entrant lock deadlock). Then see the [**matching engine**](#systems), where ThreadSanitizer caught a real memory-ordering race in my own lock-free queue.
 
 </details>
 
@@ -56,7 +59,7 @@ Jump to the [**bug autopsies**](#autopsies): two animated walkthroughs of a refe
 
 <br/>
 
-Every PR featured below comes with a root cause, a minimal reproduction where it applies, and regression tests. In one review I flagged an uncovered edge case in my own fix before anyone asked. My first open source PR took 9 commits to merge, and I treat review feedback as the point, not an obstacle.
+Every bug fix featured below comes with a root cause and regression tests. In one review I flagged an uncovered edge case in my own fix before anyone asked. In Django, maintainer feedback shrank my patch to a smaller change confined to `DeferredAttribute`, and the fix is better for it. My first open source PR took 9 commits to merge, and I treat review feedback as the point, not an obstacle.
 
 </details>
 
@@ -71,7 +74,7 @@ role       backend / systems engineer
 specialty  concurrency · memory · shared state
 hunting    race conditions · deadlocks · leaks
 weapon     minimal reproductions + regression tests
-habitat    Celery · Python · C++
+habitat    Celery · Django · Agent Framework · C++
 status     open to Summer 2027 SDE / Backend / ML internships
 ```
 
@@ -81,15 +84,13 @@ status     open to Summer 2027 SDE / Backend / ML internships
 
 <div align="center">
 
-| **5** | **5** | **4** | **278×** | **9.61** |
-|:---:|:---:|:---:|:---:|:---:|
-| featured contributions | bug classes | merged in Celery | matching throughput | B.Tech CGPA |
+| **4** | **278×** | **9.61** | **25%** |
+|:---:|:---:|:---:|:---:|
+| open-source orgs | matching throughput | B.Tech CGPA | API latency cut |
 
-**5 featured PRs: 4 in Celery, 1 in Microsoft Agent Framework · plus Open Food Facts**
+<img src="./assets/upstream.svg" alt="Terminal listing eight featured merged upstream pull requests across Celery, Django, Microsoft Agent Framework and Open Food Facts" width="100%" />
 
-<img src="./assets/upstream.svg" alt="Terminal listing five merged upstream fixes: four in Celery and one in Microsoft Agent Framework" width="100%" />
-
-<sub>Selected highlights from a broader open-source contribution history. Everything on GitHub: [Celery](https://github.com/celery/celery/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged) · [Microsoft Agent Framework](https://github.com/microsoft/agent-framework/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged) · [Open Food Facts](https://github.com/openfoodfacts/openfoodfacts-explorer/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged)</sub>
+<sub>Featured highlights. Everything on GitHub: [Celery](https://github.com/celery/celery/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged) · [Django](https://github.com/django/django/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged) · [Microsoft Agent Framework](https://github.com/microsoft/agent-framework/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged) · [Open Food Facts](https://github.com/openfoodfacts/openfoodfacts-explorer/pulls?q=is%3Apr+author%3ANamraa310806+is%3Amerged)</sub>
 
 </div>
 
@@ -97,13 +98,16 @@ status     open to Summer 2027 SDE / Backend / ML internships
 
 ## `> bug autopsies`
 
-| Bug | System | Failure | Fix |
-|:---|:---|:---|:---|
-| 🧠 Memory leak | Celery | reference cycle on the hard-timeout path | traceback cleanup that actually runs |
-| 🔒 Deadlock | Celery · Redis backend | re-entrant lock | guard on the redundant `UNSUBSCRIBE` |
-| 🧬 State leak | Celery | mutable default aliased across retries | retry state no longer shared |
-| 🔐 Time-of-use gap | Celery | expired certificate still verified | explicit expiry check |
-| 🧱 Input mutation | Agent Framework | caller's nested dicts changed in place | non-mutating merge |
+| Bug | System | What broke | The fix | PR |
+|:---|:---|:---|:---|:---|
+| 🔀 Race condition | Celery · Redis chord | concurrent completions could publish the callback twice | atomic Lua-scripted claim, unique tokens, ownership-checked cleanup | [#10998](https://github.com/celery/celery/pull/10998) |
+| 🧬 Overwritten state | Django · ORM | `FETCH_PEERS` deferred fetch overwrote loaded or modified values | fix confined to `DeferredAttribute`, with tests | [#22177](https://github.com/django/django/pull/22177) |
+| 🌊 State leak | Agent Framework · workflows | a failed or cancelled superstep's staged writes leaked into later runs | pending state discarded on failure (**1.22.0**) | [#8819](https://github.com/microsoft/agent-framework/pull/8819) |
+| 🧠 Memory leak | Celery · hard timeout | `traceback_clear(exc)` silently failed on a live frame | `exc.__traceback__ = None` breaks the cycle (**5.7.0**) | [#10493](https://github.com/celery/celery/pull/10493) |
+| 🔒 Deadlock | Celery · Redis backend | redundant `UNSUBSCRIBE` re-entered a non-reentrant lock | guarded the call (**5.7.0**) | [#10497](https://github.com/celery/celery/pull/10497) |
+| 💬 Lost context | Agent Framework · compaction | synthetic summaries silently discarded on the next run | reconciliation in `before_run` (**1.19.0**) | [#7944](https://github.com/microsoft/agent-framework/pull/7944) |
+| 🔐 Time-of-use gap | Celery · security | certificate expiring mid-run still passed verification | explicit expiry check first (**5.7.0**) | [#10510](https://github.com/celery/celery/pull/10510) |
+| 🍎 Feature | Open Food Facts Explorer | search had no brand suggestions | brand autocomplete via taxonomy fallback | [#1766](https://github.com/openfoodfacts/openfoodfacts-explorer/pull/1766) |
 
 **Pick one to investigate.** Each animation loops: broken first, fixed second.
 
@@ -119,89 +123,29 @@ status     open to Summer 2027 SDE / Backend / ML internships
 
 </div>
 
-### Case files
-
 <details>
-<summary><b>🧬 celery#10461</b> · shared-state mutation in <code>autoretry_for</code></summary>
+<summary><b>➕ More merged work</b> · Celery, Agent Framework, Open Food Facts</summary>
 
 <br/>
 
-| | |
-|:---|:---|
-| **Bug class** | Shared mutable state |
-| **Symptom** | State leaking between task retries |
-| **Root cause** | A mutable default `retry_kwargs` dict was aliased across retries |
-| **Fix** | Minimal reproduction first, then the fix |
-| **Review** | Flagged an uncovered edge case in the `getattr` fallback branch |
-| **Link** | [celery/celery#10461](https://github.com/celery/celery/pull/10461) |
+| Project | PR | Change |
+|:---|:---|:---|
+| Celery | [#10884](https://github.com/celery/celery/pull/10884) | stamped header revocation |
+| Celery | [#10822](https://github.com/celery/celery/pull/10822) | redact Azure credentials in diagnostic output |
+| Celery | [#10836](https://github.com/celery/celery/pull/10836) | avoid `get_state` for plain chain failures |
+| Celery | [#10876](https://github.com/celery/celery/pull/10876) | task execution after ETA conversion failure |
+| Celery | [#10866](https://github.com/celery/celery/pull/10866) | database backend cleanup timezone |
+| Celery | [#10701](https://github.com/celery/celery/pull/10701) | missing ArangoDB documents on delete |
+| Celery | [#10513](https://github.com/celery/celery/pull/10513) | invalid worker environment values |
+| Celery | [#10461](https://github.com/celery/celery/pull/10461) | shared `retry_kwargs` in `autoretry_for` |
+| Celery | [#10520](https://github.com/celery/celery/pull/10520) | pre-commit formatting fix |
+| Agent Framework | [#9796](https://github.com/microsoft/agent-framework/pull/9796) | Bedrock parallel tool-result handling |
+| Agent Framework | [#9469](https://github.com/microsoft/agent-framework/pull/9469) | stateless shell tools inheriting host stdin |
+| Agent Framework | [#7901](https://github.com/microsoft/agent-framework/pull/7901) | `from_dict()` mutating the caller's input |
+| Open Food Facts | [#1851](https://github.com/openfoodfacts/openfoodfacts-explorer/pull/1851) | preserve missing country data in the countries map |
+| Open Food Facts | [#1225](https://github.com/openfoodfacts/openfoodfacts-explorer/pull/1225) | keyboard-navigable crop handles (a11y) |
 
 </details>
-
-<details>
-<summary><b>🧬 celery#10493</b> · memory leak on the hard-timeout path</summary>
-
-<br/>
-
-| | |
-|:---|:---|
-| **Bug class** | Reference cycle / memory leak |
-| **Root cause** | `traceback_clear(exc)` was silently failing because it targeted a frame still on the call stack |
-| **Fix** | Removed the dead call and set `exc.__traceback__ = None` to break the exception, traceback, frame cycle |
-| **Proof** | Regression test plus a hard-timeout smoke test |
-| **Status** | Merged, **5.7.0** milestone |
-| **Link** | [celery/celery#10493](https://github.com/celery/celery/pull/10493) |
-
-</details>
-
-<details>
-<summary><b>🧬 celery#10497</b> · re-entrant lock deadlock in the Redis result backend</summary>
-
-<br/>
-
-| | |
-|:---|:---|
-| **Bug class** | Deadlock / re-entrancy |
-| **Root cause** | A redundant `UNSUBSCRIBE` could re-enter redis-py's non-reentrant PubSub lock |
-| **Fix** | Guarded the redundant call |
-| **Proof** | Regression tests |
-| **Status** | Merged, **5.7.0** milestone |
-| **Link** | [celery/celery#10497](https://github.com/celery/celery/pull/10497) |
-
-</details>
-
-<details>
-<summary><b>🧬 celery#10510</b> · certificate expires mid-run, still passes</summary>
-
-<br/>
-
-| | |
-|:---|:---|
-| **Bug class** | Time-of-use gap (security) |
-| **Root cause** | A certificate could expire mid-run and still pass signature checks |
-| **Fix** | Explicit expiry check ahead of verification |
-| **Proof** | Regression tests |
-| **Status** | Merged, **5.7.0** milestone |
-| **Link** | [celery/celery#10510](https://github.com/celery/celery/pull/10510) |
-
-</details>
-
-<details>
-<summary><b>🧬 agent-framework#7901</b> · <code>from_dict()</code> mutates the caller's input</summary>
-
-<br/>
-
-| | |
-|:---|:---|
-| **Bug class** | Unintended input mutation |
-| **Root cause** | `SerializationMixin.from_dict()` updated nested dictionaries in the caller's input in place when merging dictionary-shaped dependencies |
-| **Fix** | Replaced in-place updates with non-mutating merges |
-| **Proof** | Regression tests |
-| **Status** | Merged |
-| **Link** | [microsoft/agent-framework#7901](https://github.com/microsoft/agent-framework/pull/7901) |
-
-</details>
-
-Also merged: a keyboard-navigable crop handles accessibility fix in [Open Food Facts Explorer](https://github.com/openfoodfacts/openfoodfacts-explorer/pull/1225), after full review. 
 
 <a id="systems"></a>
 
@@ -248,30 +192,11 @@ Notes and file management with no servers to maintain. Stateless **Lambda + API 
 
 `Lambda` `API Gateway` `DynamoDB` `S3` `Cognito` `CloudWatch` `React`
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### 🎓 [ProfiLens](https://github.com/Namraa310806/ProfiLens)
-**Career-prep platform**
+### 🎓 [ProfiLens](https://github.com/Namraa310806/ProfiLens) · career-prep platform
 
 Roadmap, exam, certificate, resume, in one flow. Normalized, indexed **PostgreSQL** schema for user progress and gamification data, which reduced read latency on high-frequency endpoints. **RBAC** with session-scoped permissions, plus a background ReportLab pipeline for certificate and resume generation.
 
 `Django` `DRF` `PostgreSQL` `ReportLab`
-
-</td>
-<td width="50%" valign="top">
-
-### 🎨 [Color Classifier](https://github.com/Namraa310806/ColorClassifierML)
-**ML web app** · [live demo](https://namraapatel-colorclassifier.streamlit.app/)
-
-Random Forest on a custom-labeled color dataset, with image patching and OpenCV histogram features, served as a live Streamlit app with distribution charts. Full pipeline from raw image to classified, visualized output.
-
-`Python` `scikit-learn` `OpenCV` `NumPy` `Streamlit`
-
-</td>
-</tr>
-</table>
 
 <a id="experience"></a>
 
@@ -314,25 +239,8 @@ Random Forest on a custom-labeled color dataset, with image patching and OpenCV 
 ## `> scoreboard`
 
 <div align="center">
-<img src="./assets/achievements.svg" alt="Animated achievement cards: JPMorgan Chase Code for Good winner, Open Source Hackathon winner, Amazon ML Challenge top 2,500, Google The Big Code round 2, Hackout finalist, Oracle certifications, Codeforces Expert, Celery 5.7.0" width="100%" />
+<img src="./assets/achievements.svg" alt="Animated achievement cards: JPMorgan Chase Code for Good winner, Open Source Hackathon winner, Amazon ML Challenge top 2,500, Google The Big Code round 2, Hackout finalist, Oracle certifications, Codeforces Expert, open source" width="100%" />
 </div>
-
-<details>
-<summary><b>📋 Prefer it as a table?</b></summary>
-
-<br/>
-
-| | Achievement |
-|:---:|:---|
-| 🥇 | **JPMorgan Chase Code for Good 2026**, winner, production-ready solution for a nonprofit partner |
-| 🏆 | **Open Source Hackathon**, winner, production-ready features under time pressure |
-| 🤖 | **Amazon ML Challenge 2025**, top 2,500 of 30,000+ |
-| 🔎 | **Google The Big Code 2026**, qualified for Round 2 |
-| 🏁 | **Hackout 2025**, finalist |
-| 🎓 | **Oracle Certified**, OCI Generative AI Professional + Data Science Professional |
-| 🔥 | **Codeforces Expert (max 1664)** · **LeetCode 2207** |
-
-</details>
 
 <a id="contact"></a>
 
