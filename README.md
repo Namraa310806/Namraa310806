@@ -50,7 +50,7 @@ Start with the [upstream bug investigations](#upstream): a Redis chord race in C
 <details>
 <summary><b>I'm a maintainer — what is my contribution style?</b></summary>
 
-I focus on reproducing the failure, understanding the invariant that was broken, keeping the patch scoped, and adding regression tests. I value review feedback and prefer a smaller, well-tested fix over a broad refactor when the smaller change solves the underlying problem.
+I focus on reproducing the failure, understanding the invariant that was broken, keeping the patch scoped, and adding regression tests. I value review feedback and prefer a smaller, well-tested fix over a broad refactor when the smaller change solves the underlying problem. In Django, maintainer review shrank my patch to a change confined to `DeferredAttribute`, and the fix is better for it.
 
 </details>
 
@@ -95,81 +95,38 @@ I contribute fixes and features to production repositories, with particular inte
 |:---|:---|:---|:---|
 | Redis chord callback could publish twice | Celery | Made completion detection and dispatch an atomic Lua-scripted claim; added unique claim tokens and ownership-validated cleanup | [#10998](https://github.com/celery/celery/pull/10998) |
 | Deferred fetch overwrote existing values | Django | Prevented `FETCH_PEERS` from overwriting already-loaded or locally modified values; kept the change scoped to `DeferredAttribute` | [#22177](https://github.com/django/django/pull/22177) |
-| Failed workflow superstep leaked staged writes | Microsoft Agent Framework | Discarded pending state after failure or cancellation across core, declarative and foundry-hosting packages | [#8819](https://github.com/microsoft/agent-framework/pull/8819) |
-| Hard-timeout traceback/frame reference cycle | Celery | Replaced ineffective traceback clearing with `exc.__traceback__ = None` and added regression/smoke tests | [#10493](https://github.com/celery/celery/pull/10493) |
-| Redis result consumer deadlocked | Celery | Guarded a redundant `UNSUBSCRIBE` path that re-entered a non-reentrant lock | [#10497](https://github.com/celery/celery/pull/10497) |
-| Synthetic compaction summaries disappeared | Microsoft Agent Framework | Reworked `before_run` reconciliation so summaries survive subsequent agent runs | [#7944](https://github.com/microsoft/agent-framework/pull/7944) |
+| Failed workflow superstep leaked staged writes | Microsoft Agent Framework | Discarded pending state after failure or cancellation across core, declarative and foundry-hosting packages | [#8819](https://github.com/microsoft/agent-framework/pull/8819)<br/><sub>shipped in 1.22.0</sub> |
+| Hard-timeout traceback/frame reference cycle | Celery | Replaced ineffective traceback clearing with `exc.__traceback__ = None` and added regression/smoke tests | [#10493](https://github.com/celery/celery/pull/10493)<br/><sub>shipped in 5.7.0</sub> |
+| Redis result consumer deadlocked | Celery | Guarded a redundant `UNSUBSCRIBE` path that re-entered a non-reentrant lock | [#10497](https://github.com/celery/celery/pull/10497)<br/><sub>shipped in 5.7.0</sub> |
+| Synthetic compaction summaries disappeared | Microsoft Agent Framework | Reworked `before_run` reconciliation so summaries survive subsequent agent runs | [#7944](https://github.com/microsoft/agent-framework/pull/7944)<br/><sub>shipped in 1.19.0</sub> |
 | Certificate expiry during verification | Celery | Added an explicit expiry check before certificate verification | [#10510](https://github.com/celery/celery/pull/10510) |
 
 <div align="center">
 
-### A closer look at two failure modes
+### A closer look at three failure modes
 
 <img src="./assets/autopsies/leak.svg" alt="Reference cycle between an exception, traceback and frame, and the fix that breaks the cycle" width="100%" />
 
 <img src="./assets/autopsies/deadlock.svg" alt="Redis PubSub unsubscribe re-entering a non-reentrant lock, and the guarded fix" width="100%" />
 
+<img src="./assets/autopsies/chord.svg" alt="Two Celery workers both publishing a Redis chord callback, and the atomic claim that lets only one dispatch it" width="100%" />
+
 </div>
 
-<details>
-<summary><b>Upstream contribution index</b></summary>
-
-**Celery**
-
-| PR | Contribution |
-|:---|:---|
-| [#10998](https://github.com/celery/celery/pull/10998) | Redis chord claim cleanup ownership |
-| [#10884](https://github.com/celery/celery/pull/10884) | Stamped header revocation |
-| [#10876](https://github.com/celery/celery/pull/10876) | Task execution after ETA conversion failure |
-| [#10866](https://github.com/celery/celery/pull/10866) | Database backend cleanup timezone |
-| [#10836](https://github.com/celery/celery/pull/10836) | Avoid `get_state` for plain chain failures |
-| [#10822](https://github.com/celery/celery/pull/10822) | Redact Azure credentials in diagnostic output |
-| [#10701](https://github.com/celery/celery/pull/10701) | Handle missing ArangoDB documents on delete |
-| [#10520](https://github.com/celery/celery/pull/10520) | Pre-commit formatting fix in `test_time` |
-| [#10513](https://github.com/celery/celery/pull/10513) | Handle invalid worker environment values |
-| [#10510](https://github.com/celery/celery/pull/10510) | Certificate expiration during verification |
-| [#10497](https://github.com/celery/celery/pull/10497) | Redis result consumer redundant unsubscribe |
-| [#10493](https://github.com/celery/celery/pull/10493) | Ineffective traceback clearing in timeout handling |
-| [#10461](https://github.com/celery/celery/pull/10461) | Shared `retry_kwargs` mutation in autoretry |
-
-**Microsoft Agent Framework**
-
-| PR | Contribution |
-|:---|:---|
-| [#9796](https://github.com/microsoft/agent-framework/pull/9796) | Bedrock parallel tool result handling |
-| [#9469](https://github.com/microsoft/agent-framework/pull/9469) | Stateless shell tools inheriting host stdin |
-| [#8819](https://github.com/microsoft/agent-framework/pull/8819) | Discard pending state after failed workflow supersteps |
-| [#7944](https://github.com/microsoft/agent-framework/pull/7944) | Preserve synthetic compaction summaries |
-| [#7901](https://github.com/microsoft/agent-framework/pull/7901) | Prevent input mutation in `SerializationMixin.from_dict` |
-
-**Open Food Facts Explorer**
-
-| PR | Contribution |
-|:---|:---|
-| [#1766](https://github.com/openfoodfacts/openfoodfacts-explorer/pull/1766) | Brand autocomplete via classic taxonomy fallback |
-| [#1851](https://github.com/openfoodfacts/openfoodfacts-explorer/pull/1851) | Preserve missing country data in countries map |
-| [#1225](https://github.com/openfoodfacts/openfoodfacts-explorer/pull/1225) | Add role and tabindex to crop resize handles |
-
-**Django**
-
-| PR | Contribution |
-|:---|:---|
-| [#22177](https://github.com/django/django/pull/22177) | Avoid overwriting values when `FETCH_PEERS` fetches deferred fields |
-
-</details>
+<p><a href="https://github.com/pulls?q=is%3Apr+is%3Amerged+author%3ANamraa310806"><b>Browse all my merged pull requests on GitHub →</b></a></p>
 
 <details>
-<summary><b>Selected additional merged work</b> · security, reliability, APIs and RAG</summary>
+<summary><b>Selected contributions in other collaborative repositories</b></summary>
 
-The contribution export also includes work across collaborative repositories. A few representative examples:
+A few examples beyond the core upstream projects:
 
-| Area | Repository | Selected merged PRs |
+| Engineering area | Repository | Selected merged work |
 |:---|:---|:---|
-| Authentication and rate limiting | [LegalEase](https://github.com/AnuranjanJain/LegalEase) | [Redis-backed distributed rate limiting #441](https://github.com/AnuranjanJain/LegalEase/pull/441) · [strict JWT/API-key separation #398](https://github.com/AnuranjanJain/LegalEase/pull/398) · [stream uploads to disk #207](https://github.com/AnuranjanJain/LegalEase/pull/207) |
-| Application security and runtime reliability | [Eventra](https://github.com/SandeepVashishtha/Eventra) | [distributed rate limiting #8374](https://github.com/SandeepVashishtha/Eventra/pull/8374) · [CSRF enforcement #8150](https://github.com/SandeepVashishtha/Eventra/pull/8150) · [secure storage lifecycle #8152](https://github.com/SandeepVashishtha/Eventra/pull/8152) |
-| RAG and document processing | [pdf-qa-bot](https://github.com/FireFistisDead/pdf-qa-bot) | [SSRF hostname validation #403](https://github.com/FireFistisDead/pdf-qa-bot/pull/403) · [HttpOnly session cookies #404](https://github.com/FireFistisDead/pdf-qa-bot/pull/404) · [remove unsafe FAISS deserialization #388](https://github.com/FireFistisDead/pdf-qa-bot/pull/388) |
-| Webhook and runtime hardening | [pathfinder-ai](https://github.com/harshdwivediiiii/pathfinder-ai) | [verify Clerk webhook signatures with Svix #2268](https://github.com/harshdwivediiiii/pathfinder-ai/pull/2268) · [remove private Node.js timer internals #2262](https://github.com/harshdwivediiiii/pathfinder-ai/pull/2262) |
-| Async runtime and state correctness | [AegisGraph Sentinel](https://github.com/Puneet04-tech/AegisGraph-Sentinel-2.0) | [synchronize shared runtime state across async services #1054](https://github.com/Puneet04-tech/AegisGraph-Sentinel-2.0/pull/1054) · [lifecycle state consistency and validation #1058](https://github.com/Puneet04-tech/AegisGraph-Sentinel-2.0/pull/1058) |
+| Distributed rate limiting and authentication | [LegalEase](https://github.com/AnuranjanJain/LegalEase) | [Redis-backed rate limiting #441](https://github.com/AnuranjanJain/LegalEase/pull/441) · [strict JWT/API-key separation #398](https://github.com/AnuranjanJain/LegalEase/pull/398) |
+| Application security | [Eventra](https://github.com/SandeepVashishtha/Eventra) | [CSRF protection and enforcement #8150](https://github.com/SandeepVashishtha/Eventra/pull/8150) |
+| RAG security | [pdf-qa-bot](https://github.com/FireFistisDead/pdf-qa-bot) | [SSRF hostname validation #403](https://github.com/FireFistisDead/pdf-qa-bot/pull/403) · [remove unsafe FAISS deserialization #388](https://github.com/FireFistisDead/pdf-qa-bot/pull/388) |
+| Async runtime and concurrency | [AegisGraph Sentinel](https://github.com/Puneet04-tech/AegisGraph-Sentinel-2.0) · [pathfinder-ai](https://github.com/harshdwivediiiii/pathfinder-ai) | [synchronize shared runtime state #1054](https://github.com/Puneet04-tech/AegisGraph-Sentinel-2.0/pull/1054) · [replace timer-based mutex polling with queued waiters #1388](https://github.com/harshdwivediiiii/pathfinder-ai/pull/1388) |
+| Webhook verification | [pathfinder-ai](https://github.com/harshdwivediiiii/pathfinder-ai) | [verify Clerk webhook signatures using Svix #2268](https://github.com/harshdwivediiiii/pathfinder-ai/pull/2268) |
 
 </details>
 
@@ -242,43 +199,28 @@ A price-time-priority matching engine supporting limit and market orders, partia
 
 ## `> technology stack`
 
-I use tools to solve the problem in front of me—not to collect logos. These are the languages, frameworks and infrastructure technologies reflected in my projects, contributions and experience.
-
 <div align="center">
-
-**Languages**
-
-<img src="https://skillicons.dev/icons?i=python,cpp,java,js,ts,php&perline=6" alt="Python, C++, Java, JavaScript, TypeScript and PHP" />
-
-**Backend, data and messaging**
-
-<img src="https://skillicons.dev/icons?i=django,fastapi,flask,postgres,mysql,mongodb,redis&perline=7" alt="Django, FastAPI, Flask, PostgreSQL, MySQL, MongoDB and Redis" />
-
-**Frontend**
-
-<img src="https://skillicons.dev/icons?i=react,html,css,tailwind,bootstrap&perline=5" alt="React, HTML, CSS, Tailwind CSS and Bootstrap" />
-
-**Cloud, infrastructure and developer tools**
-
-<img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,linux,git,githubactions,cmake&perline=8" alt="AWS, Docker, Kubernetes, Linux, Git, GitHub Actions and CMake" />
-
-**AI / ML**
-
-<img src="https://skillicons.dev/icons?i=tensorflow,sklearn&perline=3" alt="TensorFlow and scikit-learn" />
-
+<img src="./assets/arsenal.svg" alt="Technology stack with recognizable logos and names: Python, C++, Java, JavaScript, TypeScript, PHP, Django, DRF, FastAPI, Flask, Celery, PostgreSQL, MySQL, MongoDB, Redis, React, HTML, CSS, Tailwind, Bootstrap, AWS, Docker, Kubernetes, Linux, Git, GitHub Actions, CMake, TensorFlow, scikit-learn and Hugging Face" width="100%" />
 </div>
 
-| Area | Tools and concepts |
-|:---|:---|
-| **Languages** | Python · C++ · Java · JavaScript · TypeScript · PHP |
-| **Backend** | Django · Django REST Framework · FastAPI · Flask · REST APIs · Celery |
-| **Data and messaging** | PostgreSQL · MySQL · MongoDB · Redis |
-| **Cloud and infrastructure** | AWS (EC2, Lambda, S3, DynamoDB, IAM, Cognito, API Gateway, CloudWatch) · Oracle Cloud Infrastructure · Docker · Kubernetes · Linux · Git |
-| **AI / ML** | TensorFlow · scikit-learn · pandas · RAG · Transformer models · Hugging Face · Model evaluation |
-| **Systems and tooling** | C++20 · CMake · GoogleTest · Google Benchmark · ASan · UBSan · TSan |
-| **Computer science** | Data structures and algorithms · Concurrency and correctness · OOP · DBMS · Operating systems · Computer networks · System design |
+The graphic gives a quick overview; below are a few tools and services in context so the names are useful even if you have not worked with them before.
 
-> I keep this list focused on technologies I have used in projects, coursework, contributions or hands-on experience. A logo is not a claim of production-level expertise.
+<details>
+<summary><b>AWS services I've worked with</b></summary>
+
+| Service | What it does | Where it appears in my work |
+|:---|:---|:---|
+| [Amazon EC2](https://aws.amazon.com/ec2/) | Virtual servers for running applications | Deployed and debugged backend services under live traffic during my internship |
+| [AWS Lambda](https://aws.amazon.com/lambda/) | Runs code without managing servers | Serverless backend for my Personal Cloud Assistant |
+| [Amazon API Gateway](https://aws.amazon.com/api-gateway/) | Creates and manages API endpoints | Routes requests to the assistant's Lambda functions |
+| [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) | Managed NoSQL database | Stores application data for the assistant |
+| [Amazon S3](https://aws.amazon.com/s3/) | Object storage for files and data | File storage and presigned download URLs |
+| [Amazon Cognito](https://aws.amazon.com/cognito/) | User sign-up, sign-in and token-based identity | JWT-based authentication for the assistant |
+| [AWS IAM](https://aws.amazon.com/iam/) | Controls identities, roles and permissions | Least-privilege permissions for backend resources |
+| [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) | Logs, metrics and operational monitoring | Custom metrics for operation counts, latency and errors |
+| [AWS Amplify](https://aws.amazon.com/amplify/) | Frontend hosting and application delivery | React frontend deployment and CI/CD |
+
+</details>
 
 ## `> engineering interests`
 
