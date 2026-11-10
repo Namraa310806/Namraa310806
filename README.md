@@ -12,7 +12,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-Namraa310806-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Namraa310806)
 [![Portfolio](https://img.shields.io/badge/Portfolio-A78BFA?style=for-the-badge&logo=firefox&logoColor=white)](https://namraa310806.github.io/Portfolio/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/namraa-patel/)
-[![Codeforces](https://img.shields.io/badge/Codeforces-Expert_1704-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/hacker08)
+[![Codeforces](https://img.shields.io/badge/Codeforces-Expert_%28max_1738%29-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/hacker08)
 [![LeetCode](https://img.shields.io/badge/LeetCode-2207-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/patelnamraa08/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:patelnamraa88@gmail.com)
 
@@ -35,7 +35,7 @@
 - **Systems:** C++20 limit order book and matching engine — **278× throughput improvement** on a cancel-heavy workload; tested with ASan, UBSan and TSan
 - **Industry experience:** Django backend internship; database indexing and ORM tuning reduced average API response time by **25%** under production load
 - **Achievements:** JPMorgan Chase Code for Good 2026 winner; Google The Big Code 2026 Round 2; Amazon ML Challenge 2025 top 2,500 of 30,000+
-- **Competitive programming:** Codeforces Expert (**1704**); LeetCode (**2207**)
+- **Competitive programming:** Codeforces Expert (max **1738**, current 1704); LeetCode (**2207**)
 - **Contact:** [patelnamraa88@gmail.com](mailto:patelnamraa88@gmail.com)
 
 </details>
@@ -203,8 +203,22 @@ A price-time-priority matching engine supporting limit and market orders, partia
 <img src="./assets/arsenal.svg" alt="Technology stack with recognizable logos and names: Python, C++, Java, JavaScript, TypeScript, PHP, Django, DRF, FastAPI, Flask, Celery, PostgreSQL, MySQL, MongoDB, Redis, React, HTML, CSS, Tailwind, Bootstrap, AWS, Docker, Kubernetes, Linux, Git, GitHub Actions, CMake, TensorFlow, scikit-learn and Hugging Face" width="100%" />
 </div>
 
+<details>
+<summary><b>AWS services I've worked with</b></summary>
 
-My work spans backend engineering, distributed systems, cloud infrastructure, systems programming and applied machine learning.
+| Service | What it does | Where it appears in my work |
+|:---|:---|:---|
+| [Amazon EC2](https://aws.amazon.com/ec2/) | Virtual servers for running applications | Deployed and debugged backend services under live traffic during my internship |
+| [AWS Lambda](https://aws.amazon.com/lambda/) | Runs code without managing servers | Serverless backend for my Personal Cloud Assistant |
+| [Amazon API Gateway](https://aws.amazon.com/api-gateway/) | Creates and manages API endpoints | Routes requests to the assistant's Lambda functions |
+| [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) | Managed NoSQL database | Stores application data for the assistant |
+| [Amazon S3](https://aws.amazon.com/s3/) | Object storage for files and data | File storage and presigned download URLs |
+| [Amazon Cognito](https://aws.amazon.com/cognito/) | User sign-up, sign-in and token-based identity | JWT-based authentication for the assistant |
+| [AWS IAM](https://aws.amazon.com/iam/) | Controls identities, roles and permissions | Least-privilege permissions for backend resources |
+| [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) | Logs, metrics and operational monitoring | Custom metrics for operation counts, latency and errors |
+| [AWS Amplify](https://aws.amazon.com/amplify/) | Frontend hosting and application delivery | React frontend deployment and CI/CD |
+
+</details>
 
 ## `> engineering interests`
 
@@ -219,12 +233,17 @@ My work spans backend engineering, distributed systems, cloud infrastructure, sy
 <img src="./assets/achievements.svg" alt="JPMorgan Chase Code for Good winner, Open Source Hackathon winner, Amazon ML Challenge top 2500, Google The Big Code Round 2, Hackout finalist, Oracle certifications, Codeforces Expert and LeetCode rating" width="100%" />
 </div>
 
+<details>
+<summary><b>Achievement details</b></summary>
+
 - **JPMorgan Chase Code for Good 2026:** Winner; built a production-ready solution for a nonprofit partner.
 - **Google The Big Code 2026:** Qualified for Round 2.
 - **Amazon ML Challenge 2025:** Top 2,500 among 30,000+ participants.
 - **Open Source Hackathon:** Winner; delivered production-ready features under time constraints.
 - **Hackout 2025:** Finalist on technical merit.
 - **Certifications:** Oracle Cloud Infrastructure Generative AI Professional; Oracle Data Science Professional.
+
+</details>
 
 <a id="contact"></a>
 
