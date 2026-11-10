@@ -203,24 +203,8 @@ A price-time-priority matching engine supporting limit and market orders, partia
 <img src="./assets/arsenal.svg" alt="Technology stack with recognizable logos and names: Python, C++, Java, JavaScript, TypeScript, PHP, Django, DRF, FastAPI, Flask, Celery, PostgreSQL, MySQL, MongoDB, Redis, React, HTML, CSS, Tailwind, Bootstrap, AWS, Docker, Kubernetes, Linux, Git, GitHub Actions, CMake, TensorFlow, scikit-learn and Hugging Face" width="100%" />
 </div>
 
-The graphic gives a quick overview; below are a few tools and services in context so the names are useful even if you have not worked with them before.
 
-<details>
-<summary><b>AWS services I've worked with</b></summary>
-
-| Service | What it does | Where it appears in my work |
-|:---|:---|:---|
-| [Amazon EC2](https://aws.amazon.com/ec2/) | Virtual servers for running applications | Deployed and debugged backend services under live traffic during my internship |
-| [AWS Lambda](https://aws.amazon.com/lambda/) | Runs code without managing servers | Serverless backend for my Personal Cloud Assistant |
-| [Amazon API Gateway](https://aws.amazon.com/api-gateway/) | Creates and manages API endpoints | Routes requests to the assistant's Lambda functions |
-| [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) | Managed NoSQL database | Stores application data for the assistant |
-| [Amazon S3](https://aws.amazon.com/s3/) | Object storage for files and data | File storage and presigned download URLs |
-| [Amazon Cognito](https://aws.amazon.com/cognito/) | User sign-up, sign-in and token-based identity | JWT-based authentication for the assistant |
-| [AWS IAM](https://aws.amazon.com/iam/) | Controls identities, roles and permissions | Least-privilege permissions for backend resources |
-| [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) | Logs, metrics and operational monitoring | Custom metrics for operation counts, latency and errors |
-| [AWS Amplify](https://aws.amazon.com/amplify/) | Frontend hosting and application delivery | React frontend deployment and CI/CD |
-
-</details>
+My work spans backend engineering, distributed systems, cloud infrastructure, systems programming and applied machine learning.
 
 ## `> engineering interests`
 
