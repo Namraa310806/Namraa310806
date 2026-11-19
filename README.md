@@ -95,6 +95,7 @@ I contribute fixes and features to production repositories, with particular inte
 |:---|:---|:---|:---|
 | Redis chord callback could publish twice | Celery | Made completion detection and dispatch an atomic Lua-scripted claim; added unique claim tokens and ownership-validated cleanup | [#10998](https://github.com/celery/celery/pull/10998) |
 | Deferred fetch overwrote existing values | Django | Prevented `FETCH_PEERS` from overwriting already-loaded or locally modified values; kept the change scoped to `DeferredAttribute` | [#22177](https://github.com/django/django/pull/22177) |
+| JSONL deserialization broke on Unicode line separators | Django | Fixed deserialization when JSON strings contain Unicode line separators; added regression tests | [#22244](https://github.com/django/django/pull/22244) |
 | Failed workflow superstep leaked staged writes | Microsoft Agent Framework | Discarded pending state after failure or cancellation across core, declarative and foundry-hosting packages | [#8819](https://github.com/microsoft/agent-framework/pull/8819)<br/><sub>shipped in 1.22.0</sub> |
 | Hard-timeout traceback/frame reference cycle | Celery | Replaced ineffective traceback clearing with `exc.__traceback__ = None` and added regression/smoke tests | [#10493](https://github.com/celery/celery/pull/10493)<br/><sub>shipped in 5.7.0</sub> |
 | Redis result consumer deadlocked | Celery | Guarded a redundant `UNSUBSCRIBE` path that re-entered a non-reentrant lock | [#10497](https://github.com/celery/celery/pull/10497)<br/><sub>shipped in 5.7.0</sub> |
