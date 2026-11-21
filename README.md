@@ -158,6 +158,22 @@ A price-time-priority matching engine supporting limit and market orders, partia
 
 ## `> selected projects`
 
+### [ContribIQ](https://github.com/Namraa310806/ContribIQ) · Evidence-based engineering profiles from GitHub history
+
+<div align="center">
+<img src="./assets/architectures/contribiq.svg" alt="ContribIQ architecture: partitioned GitHub Search discovery, PR evidence snapshots, repository eligibility engine, classifier, deterministic six-dimension scoring, skill graph and insights, served by FastAPI and MongoDB to a React dashboard and an expiring recruiter dossier" width="100%" />
+</div>
+
+Turns a developer's GitHub history into a verifiable profile of real engineering work: PR-centric analysis, an evidence-backed skill graph, resume bullets and STAR answers that each link to the PRs that prove them, and a shareable recruiter dossier.
+
+- **Beat the GitHub Search 1,000-result ceiling:** discovery bisects `created:` date windows recursively (down to 14 days) and stores per-window coverage, so partial history is reported as partial and never claimed complete.
+- **Repository eligibility engine:** every PR's base repo gets an auditable ownership verdict (`ELIGIBLE_EXTERNAL`, `EXCLUDED_SELF_OWNED`, `EXCLUDED_CONTROLLED_ORGANIZATION`, `REVIEW_REQUIRED`, `UNKNOWN`) using owner type, org membership role and fork upstream, so your own repos keep their technical evidence but earn zero open-source collaboration credit.
+- **Deterministic six-dimension scoring:** technical substance, code quality, testing, problem significance, review collaboration and acceptance are scored independently, so merged does not mean excellent and closed does not mean worthless. Reverted PRs lose acceptance credit but keep technical merit.
+- **Calibrated, with honest limits:** 12 hand-built PR archetype fixtures assert ordering invariants rather than exact scores; the weights are documented as engineering judgement, not validated psychometrics.
+- **Snapshot-safe evidence and grounded AI:** PR child collections are replaced only when their fetch succeeds, and every generated bullet or STAR answer must cite its PRs or it is dropped. **72 backend tests passing.**
+
+`FastAPI` `MongoDB` `Pydantic v2` `React 19` `TypeScript` `Tailwind` `GitHub OAuth (PKCE)` `pytest`
+
 ### [TeamSense](https://github.com/Namraa310806/TeamSense) · Async task pipeline for HR analytics
 
 <div align="center">
@@ -180,13 +196,6 @@ A price-time-priority matching engine supporting limit and market orders, partia
 - Added CloudWatch custom metrics for operation counts, request duration and errors behind an admin-only dashboard; shipped a React 19 frontend with Amplify CI/CD.
 
 `AWS Lambda` `API Gateway` `DynamoDB` `S3` `Cognito` `CloudWatch` `React`
-
-### [ProfiLens](https://github.com/Namraa310806/ProfiLens) · Career-preparation platform
-
-- Built a normalized, indexed PostgreSQL schema for user progress and gamification data, with role-based access control and session-scoped permissions.
-- Added a background ReportLab pipeline for certificate and resume generation.
-
-`Django` `DRF` `PostgreSQL` `ReportLab`
 
 <a id="experience"></a>
 
