@@ -12,7 +12,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-Namraa310806-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Namraa310806)
 [![Portfolio](https://img.shields.io/badge/Portfolio-A78BFA?style=for-the-badge&logo=firefox&logoColor=white)](https://namraa310806.github.io/Portfolio/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/namraa-patel/)
-[![Codeforces](https://img.shields.io/badge/Codeforces-Expert_1704-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/hacker08)
+[![Codeforces](https://img.shields.io/badge/Codeforces-Expert_%28max_1738%29-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white)](https://codeforces.com/profile/hacker08)
 [![LeetCode](https://img.shields.io/badge/LeetCode-2207-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/patelnamraa08/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:patelnamraa88@gmail.com)
 
@@ -35,7 +35,7 @@
 - **Systems:** C++20 limit order book and matching engine — **278× throughput improvement** on a cancel-heavy workload; tested with ASan, UBSan and TSan
 - **Industry experience:** Django backend internship; database indexing and ORM tuning reduced average API response time by **25%** under production load
 - **Achievements:** JPMorgan Chase Code for Good 2026 winner; Google The Big Code 2026 Round 2; Amazon ML Challenge 2025 top 2,500 of 30,000+
-- **Competitive programming:** Codeforces Expert (**1704**); LeetCode (**2207**)
+- **Competitive programming:** Codeforces Expert (max **1738**, current 1704); LeetCode (**2207**)
 - **Contact:** [patelnamraa88@gmail.com](mailto:patelnamraa88@gmail.com)
 
 </details>
@@ -95,6 +95,7 @@ I contribute fixes and features to production repositories, with particular inte
 |:---|:---|:---|:---|
 | Redis chord callback could publish twice | Celery | Made completion detection and dispatch an atomic Lua-scripted claim; added unique claim tokens and ownership-validated cleanup | [#10998](https://github.com/celery/celery/pull/10998) |
 | Deferred fetch overwrote existing values | Django | Prevented `FETCH_PEERS` from overwriting already-loaded or locally modified values; kept the change scoped to `DeferredAttribute` | [#22177](https://github.com/django/django/pull/22177) |
+| JSONL deserialization broke on Unicode line separators | Django | Fixed deserialization when JSON strings contain Unicode line separators; added regression tests | [#22244](https://github.com/django/django/pull/22244) |
 | Failed workflow superstep leaked staged writes | Microsoft Agent Framework | Discarded pending state after failure or cancellation across core, declarative and foundry-hosting packages | [#8819](https://github.com/microsoft/agent-framework/pull/8819)<br/><sub>shipped in 1.22.0</sub> |
 | Hard-timeout traceback/frame reference cycle | Celery | Replaced ineffective traceback clearing with `exc.__traceback__ = None` and added regression/smoke tests | [#10493](https://github.com/celery/celery/pull/10493)<br/><sub>shipped in 5.7.0</sub> |
 | Redis result consumer deadlocked | Celery | Guarded a redundant `UNSUBSCRIBE` path that re-entered a non-reentrant lock | [#10497](https://github.com/celery/celery/pull/10497)<br/><sub>shipped in 5.7.0</sub> |
@@ -157,6 +158,22 @@ A price-time-priority matching engine supporting limit and market orders, partia
 
 ## `> selected projects`
 
+### [ContribIQ](https://github.com/Namraa310806/ContribIQ) · Evidence-based engineering profiles from GitHub history
+
+<div align="center">
+<img src="./assets/architectures/contribiq.svg" alt="ContribIQ architecture: partitioned GitHub Search discovery, PR evidence snapshots, repository eligibility engine, classifier, deterministic six-dimension scoring, skill graph and insights, served by FastAPI and MongoDB to a React dashboard and an expiring recruiter dossier" width="100%" />
+</div>
+
+Turns a developer's GitHub history into a verifiable profile of real engineering work: PR-centric analysis, an evidence-backed skill graph, resume bullets and STAR answers that each link to the PRs that prove them, and a shareable recruiter dossier.
+
+- **Beat the GitHub Search 1,000-result ceiling:** discovery bisects `created:` date windows recursively (down to 14 days) and stores per-window coverage, so partial history is reported as partial and never claimed complete.
+- **Repository eligibility engine:** every PR's base repo gets an auditable ownership verdict (`ELIGIBLE_EXTERNAL`, `EXCLUDED_SELF_OWNED`, `EXCLUDED_CONTROLLED_ORGANIZATION`, `REVIEW_REQUIRED`, `UNKNOWN`) using owner type, org membership role and fork upstream, so your own repos keep their technical evidence but earn zero open-source collaboration credit.
+- **Deterministic six-dimension scoring:** technical substance, code quality, testing, problem significance, review collaboration and acceptance are scored independently, so merged does not mean excellent and closed does not mean worthless. Reverted PRs lose acceptance credit but keep technical merit.
+- **Calibrated, with honest limits:** 12 hand-built PR archetype fixtures assert ordering invariants rather than exact scores; the weights are documented as engineering judgement, not validated psychometrics.
+- **Snapshot-safe evidence and grounded AI:** PR child collections are replaced only when their fetch succeeds, and every generated bullet or STAR answer must cite its PRs or it is dropped. **72 backend tests passing.**
+
+`FastAPI` `MongoDB` `Pydantic v2` `React 19` `TypeScript` `Tailwind` `GitHub OAuth (PKCE)` `pytest`
+
 ### [TeamSense](https://github.com/Namraa310806/TeamSense) · Async task pipeline for HR analytics
 
 <div align="center">
@@ -180,13 +197,6 @@ A price-time-priority matching engine supporting limit and market orders, partia
 
 `AWS Lambda` `API Gateway` `DynamoDB` `S3` `Cognito` `CloudWatch` `React`
 
-### [ProfiLens](https://github.com/Namraa310806/ProfiLens) · Career-preparation platform
-
-- Built a normalized, indexed PostgreSQL schema for user progress and gamification data, with role-based access control and session-scoped permissions.
-- Added a background ReportLab pipeline for certificate and resume generation.
-
-`Django` `DRF` `PostgreSQL` `ReportLab`
-
 <a id="experience"></a>
 
 ## `> experience & education`
@@ -203,8 +213,22 @@ A price-time-priority matching engine supporting limit and market orders, partia
 <img src="./assets/arsenal.svg" alt="Technology stack with recognizable logos and names: Python, C++, Java, JavaScript, TypeScript, PHP, Django, DRF, FastAPI, Flask, Celery, PostgreSQL, MySQL, MongoDB, Redis, React, HTML, CSS, Tailwind, Bootstrap, AWS, Docker, Kubernetes, Linux, Git, GitHub Actions, CMake, TensorFlow, scikit-learn and Hugging Face" width="100%" />
 </div>
 
+<details>
+<summary><b>AWS services I've worked with</b></summary>
 
-My work spans backend engineering, distributed systems, cloud infrastructure, systems programming and applied machine learning.
+| Service | What it does | Where it appears in my work |
+|:---|:---|:---|
+| [Amazon EC2](https://aws.amazon.com/ec2/) | Virtual servers for running applications | Deployed and debugged backend services under live traffic during my internship |
+| [AWS Lambda](https://aws.amazon.com/lambda/) | Runs code without managing servers | Serverless backend for my Personal Cloud Assistant |
+| [Amazon API Gateway](https://aws.amazon.com/api-gateway/) | Creates and manages API endpoints | Routes requests to the assistant's Lambda functions |
+| [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) | Managed NoSQL database | Stores application data for the assistant |
+| [Amazon S3](https://aws.amazon.com/s3/) | Object storage for files and data | File storage and presigned download URLs |
+| [Amazon Cognito](https://aws.amazon.com/cognito/) | User sign-up, sign-in and token-based identity | JWT-based authentication for the assistant |
+| [AWS IAM](https://aws.amazon.com/iam/) | Controls identities, roles and permissions | Least-privilege permissions for backend resources |
+| [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) | Logs, metrics and operational monitoring | Custom metrics for operation counts, latency and errors |
+| [AWS Amplify](https://aws.amazon.com/amplify/) | Frontend hosting and application delivery | React frontend deployment and CI/CD |
+
+</details>
 
 ## `> engineering interests`
 
@@ -219,12 +243,17 @@ My work spans backend engineering, distributed systems, cloud infrastructure, sy
 <img src="./assets/achievements.svg" alt="JPMorgan Chase Code for Good winner, Open Source Hackathon winner, Amazon ML Challenge top 2500, Google The Big Code Round 2, Hackout finalist, Oracle certifications, Codeforces Expert and LeetCode rating" width="100%" />
 </div>
 
+<details>
+<summary><b>Achievement details</b></summary>
+
 - **JPMorgan Chase Code for Good 2026:** Winner; built a production-ready solution for a nonprofit partner.
 - **Google The Big Code 2026:** Qualified for Round 2.
 - **Amazon ML Challenge 2025:** Top 2,500 among 30,000+ participants.
 - **Open Source Hackathon:** Winner; delivered production-ready features under time constraints.
 - **Hackout 2025:** Finalist on technical merit.
 - **Certifications:** Oracle Cloud Infrastructure Generative AI Professional; Oracle Data Science Professional.
+
+</details>
 
 <a id="contact"></a>
 
